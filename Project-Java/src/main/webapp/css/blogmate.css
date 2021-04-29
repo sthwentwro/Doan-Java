@@ -775,7 +775,7 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
 .comment-content h3{ font-size:16px;}
 /*============ Blog end ============*/
 @media only screen and (min-width: 480px) and (max-width: 567px) {
-.comment-form textarea; {
+.comment-form textarea {
 width:250px;
 }
 }

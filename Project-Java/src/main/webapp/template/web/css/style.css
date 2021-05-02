@@ -3469,7 +3469,6 @@ color: #000;
 }
 ul.products-grid {
 	padding: 0;
-margin:
 }
 .category-products ul.products-grid li.item {
 	text-align: center;
@@ -8367,7 +8366,7 @@ font-size:24px
 .col-xs-12.right_menu {
 	padding-left: 4px;
 }
-.product-img-box. col-xs-12 {
+.product-img-box.col-xs-12 {
 width: 300px;
 }
 .product-next-prev {
@@ -11020,9 +11019,7 @@ ol#compare-items li a.product-name {
 	padding-bottom:6px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight:normal;
-	border-radius:0px
-
-	
+	border-radius:0px	
 }
 
 .countbox_2.timer-grid .box-time-date span {

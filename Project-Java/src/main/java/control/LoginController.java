@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.UserDAO;
 import entity.User;
+import utils.AppUtils;
 
 /**
  * Servlet implementation class LoginController
@@ -51,6 +52,8 @@ public class LoginController extends HttpServlet {
             request.getRequestDispatcher("views/web/login.jsp").forward(request, response);
             return;
 		}
+		//luu thong tin nguoi dung vao session
+		AppUtils.storeLoginedUser(request.getSession(), user);
 		// Mặc định sau khi đăng nhập thành công
         // chuyển hướng về trang chủ
         response.sendRedirect(request.getContextPath() + "/Home");

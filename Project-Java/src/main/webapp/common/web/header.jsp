@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Header -->
   <header>
     <div class="header-container">
@@ -105,10 +106,16 @@
                   <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
                   <div class="demo"><a title="Blog" href="blog.html"><span class="hidden-xs">Blog</span></a></div>
                   <!-- Header Company -->
-                  
-                  <!-- End Header Company -->
-                  <div class="login"><a href="${pageContext.request.contextPath}/dangnhap"><span class="hidden-xs">Log In</span></a></div>
-                  
+                  <c:choose>
+	                  <c:when test="${not empty loginedUser.username}">
+	                  <div class="login"><a href="#"><span class="hidden-xs">Hello! ${loginedUser.username}</span></a></div>
+	                  <div class="login"><a href="${pageContext.request.contextPath}/dangxuat"><span class="hidden-xs">Log Out</span></a></div>
+	                  </c:when>
+	                  <c:otherwise>
+	                  <div class="login"><a href="${pageContext.request.contextPath}/dangnhap"><span class="hidden-xs">Log In</span></a></div>
+	                  </c:otherwise>
+                  </c:choose> 					
+                  <!-- End Header Company -->                                   
                 </div>
                 
               </div>

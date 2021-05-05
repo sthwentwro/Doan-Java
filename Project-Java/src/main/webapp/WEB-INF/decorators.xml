@@ -2,10 +2,10 @@
 <decorators defaultdir="/decorators">
 <!-- Bất cứ url nào có trong thẻ excludes sẽ không dc trang trí bởi sitemesh -->
 	<excludes>
-		<pattern>/api*</pattern>
+		
 	</excludes>
 	<!-- áp dụng layout của file web-layout cho url /*  -->
 	<decorator name="web" page="web-layout.jsp">
-		<pattern>/*</pattern>
+		<pattern>/*</pattern>		
 	</decorator>
 </decorators>

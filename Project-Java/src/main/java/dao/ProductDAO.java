@@ -26,15 +26,23 @@ public class ProductDAO {
 				ps = conn.prepareStatement(query);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					list.add(new Product(rs.getInt(1),
-							rs.getNString(2),
-							rs.getInt(3),
-							rs.getNString(4),
-							rs.getNString(5),
-							rs.getInt(6),
-							rs.getInt(7),
-							rs.getDate(8),
-							rs.getInt(9)));
+					list.add(new Product(rs.getInt("MaPhuKien"),
+							rs.getInt("MaLoaiPK"),
+							rs.getNString("TenPhuKien"),
+							rs.getInt("IDThuongHieu"),
+							rs.getString("MetaTitle"),
+							rs.getNString("Mota"),
+							rs.getInt("Soluongton"),
+							rs.getNString("NoiDungSP"),
+							rs.getInt("GiaBan"),
+							rs.getInt("GiaCu"),
+							rs.getString("Cover"),
+							rs.getInt("BaoHanh"),
+							rs.getDate("CreatedDate"),
+							rs.getDate("ModifiedDate"),
+							rs.getString("ModifiedBy"),
+							rs.getBoolean("Status"),
+							rs.getInt("ViewCount")));
 				}
 				conn.close();
 			} catch (Exception e) {
@@ -42,9 +50,9 @@ public class ProductDAO {
 			}
 			return list;
 		}
-		/*
-		 * public static void main(String[] args) { ProductDAO dao = new ProductDAO();
-		 * List<Product> list = dao.get3Product(); for (Product p : list) {
-		 * System.out.print(p); } }
-		 */
+		
+		  public static void main(String[] args) { ProductDAO dao = new ProductDAO();
+		  List<Product> list = dao.getNumProduct(4); for (Product p : list) {
+		  System.out.print(p); } }
+		 
 }

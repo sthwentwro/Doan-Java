@@ -4,6 +4,11 @@
 	<excludes>
 		
 	</excludes>
+	<!-- áp dụng layout của file admin-layout cho url /admin/*  -->
+	<decorator name="admin" page="admin-layout.jsp">
+		<pattern>/admin/*</pattern>
+		<pattern>/admin*</pattern>	
+	</decorator>
 	<!-- áp dụng layout của file web-layout cho url /*  -->
 	<decorator name="web" page="web-layout.jsp">
 		<pattern>/*</pattern>		

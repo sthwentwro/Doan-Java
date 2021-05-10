@@ -50,9 +50,46 @@ public class ProductDAO {
 			}
 			return list;
 		}
+		public Product getProductbyId(int id) {
+			Product pr = null;
+			String query = "select * from PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK\r\n"
+					+ "where a.MaPhuKien = ?";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);		
+				ps.setInt(1, id);
+				//chay cau lenh query
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					pr = new Product(rs.getInt("MaPhuKien"),
+							rs.getInt("MaLoaiPK"),
+							rs.getNString("TenPhuKien"),
+							rs.getInt("IDThuongHieu"),
+							rs.getString("MetaTitle"),
+							rs.getNString("Mota"),
+							rs.getInt("Soluongton"),
+							rs.getNString("NoiDungSP"),
+							rs.getInt("GiaBan"),
+							rs.getInt("GiaCu"),
+							rs.getString("Cover"),
+							rs.getInt("BaoHanh"),
+							rs.getDate("CreatedDate"),
+							rs.getDate("ModifiedDate"),
+							rs.getString("ModifiedBy"),
+							rs.getBoolean("Status"),
+							rs.getInt("ViewCount"));
+				}
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return pr;
+		}
 		
-		  public static void main(String[] args) { ProductDAO dao = new ProductDAO();
-		  List<Product> list = dao.getNumProduct(4); for (Product p : list) {
-		  System.out.print(p); } }
+		public static void main(String[] args) {
+			ProductDAO dao = new ProductDAO();
+			Product pr = dao.getProductbyId(8);
+			System.out.print(pr.toString());
+			}
+		}
 		 
-}

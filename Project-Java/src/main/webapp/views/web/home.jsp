@@ -20,50 +20,26 @@
         </div>
      
           <ul class="nav hidden-xs menu-item menu-item-left">
-            <li class="level0 parent drop-menu active"><a href="index.html"><span>Home</span></a>
+            <li class="level0 parent drop-menu active"><a href="${pageContext.request.contextPath}/Home"><span>Home</span></a>
               
             </li>
-            <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
+            <li class="level0 parent drop-menu"><a href="#"><span>Thương hiệu</span> </a>
               <ul class="level1" style="display: none;">
-                <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-                <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-                <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-                <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
-                <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a> 
+                <li class="level1 first"><a href="#"><span>OEM</span></a></li>
+                <li class="level1 nav-10-2"> <a href="#"> <span>Nilkin</span> </a> </li>
+                <li class="level1 nav-10-3"> <a href="#"> <span>MiPow</span> </a> </li>
+                <li class="level1 nav-10-4"> <a href="#"> <span>Gor</span> </a> </li>
+                <li class="level1 first parent"><a href="#"><span>Baseus</span></a> 
                   <!--sub sub category-->
                   <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
                     <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
                     <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
                   </ul>
                   <!--sub sub category--> 
-                </li>
-                <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-                <li class="level1 first parent"><a href="dashboard.html"><span>Dashboard</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="account_information.html"><span>Account Information</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="address_book.html"><span>Address Book</span></a></li>
-                    <li class="level2 nav-2-1-1 first"><a href="contact_information.html"><span>Contact Information</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>
-                <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-                <li class="level1"> <a href="about_us.html"> <span>About us</span> </a> </li>
-                
-                <li class="level1"> <a href="faq.html"> <span>FAQ</span> </a> </li>
-                <li class="level1"> <a href="login.html"> <span>Login</span> </a> </li>
-                <li class="level1"> <a href="forgot_password.html"> <span>Forgot Password</span> </a> </li>
-                <li class="level1"> <a href="quick_view.html"> <span>Quick view </span> </a> </li>
-                <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a>
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
-                  </ul>
-                </li>
-                <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
-                <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
+                </li>               
               </ul>
             </li>
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Women</span></a>
+            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Tai nghe</span></a>
               <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
                 <div class="container">
                   <div class="level0-wrapper2">
@@ -94,7 +70,7 @@
                               <li class="level2 nav-6-1-1"><a href="#/heels.html"><span>Heels</span></a></li>
                             </ul>
                           </li>
-                          <li class="level1 nav-6-1 parent item"><a href="#.html"><span>Jwellery</span></a>
+                          <!-- <li class="level1 nav-6-1 parent item"><a href="#.html"><span>Jwellery</span></a>
                             <ul class="level1">
                               <li class="level2 nav-6-1-1"><a href="#/bracelets.html"><span>Bracelets</span></a></li>
                               <li class="level2 nav-6-1-1"><a href="#"><span>Necklaces &amp; Pendent</span></a></li>
@@ -117,7 +93,7 @@
                               <li class="level2 nav-6-1-1"><a href="#/swimwear/clothing.html"><span>Clothing</span></a></li>
                               <li class="level2 nav-6-1-1"><a href="#/swimwear/bikinis.html"><span>Bikinis</span></a></li>
                             </ul>
-                          </li>
+                          </li> -->
                         </ul>
                       </div>
                     </div>
@@ -128,72 +104,10 @@
                   </div>
                   <!--level0-wrapper2--> </div>
               </div>
-            </li>
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Men</span></a>
-              <div  style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
-                <div class="container">
-                  <div class="level0-wrapper2">
-                    <div class="nav-block nav-block-center">
-                      <ul class="level0">
-                        <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>Shoes</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>Sport Shoes</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>Casual Shoes</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>Leather Shoes</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>canvas shoes</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#.html"><span>Dresses</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/casual-dresses.html"><span>Casual Dresses</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/evening.html"><span>Evening</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/designer.html"><span>Designer</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/party.html"><span>Party</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#.html"><span>Jackets</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/coats.html"><span>Coats</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/formal-jackets.html"><span>Formal Jackets</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/leather-jackets.html"><span>Leather Jackets</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/blazers.html"><span>Blazers</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#.html"><span>Watches</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/fasttrack.html"><span>Fasttrack</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/casio.html"><span>Casio</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/titan.html"><span>Titan</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/tommy-hilfiger.html"><span>Tommy-Hilfiger</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/sunglasses.html"><span>Sunglasses</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/sunglasses/ray-ban.html"><span>Ray Ban</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/sunglasses/fasttrack.html"><span>Fasttrack</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/sunglasses/police.html"><span>Police</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/sunglasses/oakley.html"><span>Oakley</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/accesories.html"><span>Accesories</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/accesories/backpacks.html"><span>Backpacks</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/accesories/wallets.html"><span>Wallets</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/accesories/laptops-bags.html"><span>Laptops Bags</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/accesories/belts.html"><span>Belts</span></a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <!--level0-wrapper2-->
-                    
-                  </div>
-                </div>
-              </div>
-            </li>
+            </li>           
             </ul>
             <ul class="nav hidden-xs menu-item menu-item-right">
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Electronics</span></a>
+            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Loa</span></a>
               <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
                 <div class="container">
                   <div class="level0-wrapper2">
@@ -255,14 +169,12 @@
                 </div>
               </div>
             </li>
-            <li class="mega-menu"><a class="level-top" href="grid.html"><span>Furniture</span></a>
+            <li class="mega-menu"><a class="level-top" href="#"><span>Cường lực</span></a>
               
             </li>
-            <li class="level0 nav-8 level-top"><a href="grid.html" class="level-top"><span>Kids</span></a></li>
+            <li class="level0 nav-8 level-top"><a href="grid.html" class="#"><span>Ốp lưng</span></a></li>
           
-          </ul>
-          
-          
+          </ul>                 
        
     </div>
   </nav>
@@ -275,7 +187,7 @@
         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
           <ul>
             <!-- SLIDE  -->
-            <li data-index="rs-16" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/slide-img1.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description=""> 
+            <li data-index="rs-16" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="template/web/images/slide-img1.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description=""> 
               <!-- MAIN IMAGE --> 
               <img src="template/web/images/slide-img1.jpg" alt=""> 
               <!-- LAYERS --> 
@@ -378,7 +290,7 @@
             <!-- SLIDE  -->
             <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="template/web/images/slide-img2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-description=""> 
               <!-- MAIN IMAGE --> 
-              <img src="images/slide-img2.jpg"  alt=""> 
+              <img src="template/web/images/slide-img2.jpg"  alt=""> 
               <!-- LAYERS --> 
               
               <!-- LAYER NR. 1 -->

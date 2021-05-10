@@ -54,9 +54,23 @@ public class LoginController extends HttpServlet {
 		}
 		//luu thong tin nguoi dung vao session
 		AppUtils.storeLoginedUser(request.getSession(), user);
-		// Mặc định sau khi đăng nhập thành công
-        // chuyển hướng về trang chủ
-        response.sendRedirect(request.getContextPath() + "/Home");
+		
+		int redirectId = -1;
+        try {       	
+            redirectId = Integer.parseInt(request.getParameter("redirectId"));
+        } 
+        catch (Exception e) 
+        {
+        	e.printStackTrace();
+        }
+        String requestUri = AppUtils.getRedirectAfterLoginUrl(request.getSession(), redirectId);
+        if (requestUri != null) {
+            response.sendRedirect(requestUri);
+        } else {
+    		// Mặc định sau khi đăng nhập thành công
+            // chuyển hướng về trang chủ
+            response.sendRedirect(request.getContextPath() + "/Home");
+        }
 	}
 
 }

@@ -18,6 +18,16 @@ public class Product {
 	private Date ngaytao;
 	private Date ngaycapnhat;
 	private String nguoisua;
+	@Override
+	public String toString() {
+		return "Product [IDPhukien=" + IDPhukien + ", IDloaiPK=" + IDloaiPK + ", tenphukien=" + tenphukien
+				+ ", IDthuonghieu=" + IDthuonghieu + ", metaTitle=" + metaTitle + ", mota=" + mota + ", soluongton="
+				+ soluongton + ", noidungSP=" + noidungSP + ", giaban=" + giaban + ", giacu=" + giacu + ", cover="
+				+ cover + ", baohanh=" + baohanh + ", ngaytao=" + ngaytao + ", ngaycapnhat=" + ngaycapnhat
+				+ ", nguoisua=" + nguoisua + ", tinhtrang=" + tinhtrang + ", luotxem=" + luotxem + ", Tenthuonghieu="
+				+ Tenthuonghieu + ", Tenloai=" + Tenloai + "]";
+	}
+
 	private boolean tinhtrang;
 	private int luotxem;
 	private String Tenthuonghieu;

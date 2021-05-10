@@ -18,9 +18,9 @@ public class DBContext {
 	             instanceName + ";databaseName=" + database;
 	    return DriverManager.getConnection(connectionURL, userName,password);
 	}
-	/*
-	 * public static void main(String[] args) { try { System.out.println(new
-	 * DBContext().getConnection()); } catch (Exception e) { e.printStackTrace(); }
-	 * }
-	 */
+	
+	  public static void main(String[] args) { try { System.out.println(new
+	  DBContext().getConnection()); } catch (Exception e) { e.printStackTrace(); }
+	  }
+	 
 }

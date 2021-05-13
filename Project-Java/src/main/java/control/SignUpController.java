@@ -1,13 +1,17 @@
 package control;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ProductDAO;
 import dao.UserDAO;
+import entity.Category;
 
 /**
  * Servlet implementation class SignUpController
@@ -23,6 +27,10 @@ public class SignUpController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ProductDAO dao = new ProductDAO();
+		//lay danh sach cac loai san pham
+		List<Category> listc = dao.getListCategory();
+		request.setAttribute("listc", listc);
 		request.getRequestDispatcher("views/web/signup.jsp").forward(request, response);
 	}
 

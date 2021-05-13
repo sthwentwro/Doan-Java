@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ProductDAO;
 import dao.UserDAO;
+import entity.Category;
 import entity.User;
 import utils.AppUtils;
 
@@ -32,6 +35,10 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ProductDAO dao = new ProductDAO();
+		//lay danh sach cac loai san pham
+		List<Category> listc = dao.getListCategory();
+		request.setAttribute("listc", listc);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
 		rd.forward(request, response);
 	}

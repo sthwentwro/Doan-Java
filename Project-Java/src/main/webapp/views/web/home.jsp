@@ -20,47 +20,13 @@
         </div>
      
           <ul class="nav hidden-xs menu-item menu-item-left">
-            <li class="level0 parent drop-menu active"><a href="index.html"><span>Home</span></a>
-              
+            <li class="level0 parent drop-menu active"><a href="${pageContext.request.contextPath}/Home"><span>Home</span></a>
             </li>
-            <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
+            <li class="level0 parent drop-menu"><a href="#"><span>Product</span> </a>
               <ul class="level1" style="display: none;">
-                <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-                <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-                <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-                <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
-                <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>
-                <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-                <li class="level1 first parent"><a href="dashboard.html"><span>Dashboard</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="account_information.html"><span>Account Information</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="address_book.html"><span>Address Book</span></a></li>
-                    <li class="level2 nav-2-1-1 first"><a href="contact_information.html"><span>Contact Information</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>
-                <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-                <li class="level1"> <a href="about_us.html"> <span>About us</span> </a> </li>
-                
-                <li class="level1"> <a href="faq.html"> <span>FAQ</span> </a> </li>
-                <li class="level1"> <a href="login.html"> <span>Login</span> </a> </li>
-                <li class="level1"> <a href="forgot_password.html"> <span>Forgot Password</span> </a> </li>
-                <li class="level1"> <a href="quick_view.html"> <span>Quick view </span> </a> </li>
-                <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a>
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
-                  </ul>
-                </li>
-                <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
-                <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
+              <c:forEach items="${listc}" var="item">
+              <li class="level1 first"><a href="danhsachsanpham?idcategory=${item.idcategory}"><span>${item.tenloai}</span></a></li>
+              </c:forEach>
               </ul>
             </li>
             <li class="mega-menu"><a href="grid.html" class="level-top"><span>Women</span></a>

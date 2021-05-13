@@ -8,7 +8,7 @@ public class DBContext {
 	private final String instanceName = "";
 	private final String database = "WebBanPhuKien";//tên database
 	private final String userName = "sa";//tên tài khoản đăng nhập sql
-	private final String password = "23012000";//mật khẩu đăng nhập sql
+	private final String password = "123456";//mật khẩu đăng nhập sql
 	
 	//phương thức lấy kết nối đến sql server
 	public  Connection getConnection() throws SQLException, ClassNotFoundException

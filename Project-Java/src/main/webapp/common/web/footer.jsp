@@ -69,9 +69,9 @@
         </div>
       </div>
       <div class="container">
-      <div class="col-sm-12 col-xs-12 footer-logo"><img alt="Datson" src="images/logo.png"></div>
+      <div class="col-sm-12 col-xs-12 footer-logo"><img alt="Datson" src="${pageContext.request.contextPath}/template/web/images/logo.png"></div>
       <address>
-          <i class="fa fa-map-marker"></i>ThemesGround, 789 Main rd, Anytown, CA 12345  USA <i class="fa fa-mobile"></i><span> +(888) 123-4567</span> <i class="fa fa-envelope"></i><span> superb@themesground.com</span>
+          <i class="fa fa-map-marker"></i>ThemesGround, 789 Main rd, Anytown, CA 12345  USA <i class="fa fa-mobile"></i><span> +(888) 123-4567</span> <i class="fa fa-envelope"></i><span> superb@phukien.com</span>
           </address>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-xs-12 coppyright">&copy; 2016 ThemesGround. All Rights Reserved.</div>
+          <div class="col-sm-12 col-xs-12 coppyright">&copy; 2021 All Rights Reserved.</div>
           
         </div>
       </div>

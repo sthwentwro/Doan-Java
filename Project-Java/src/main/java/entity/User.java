@@ -12,7 +12,7 @@ public class User {
 	private String rolename;
 	public User() {
 	}
-
+	
 	public User(int iD, String username, String password, String email, String sdt, String diachi, String fullname,int roleid) {
 		ID = iD;
 		this.username = username;
@@ -22,6 +22,18 @@ public class User {
 		this.diachi = diachi;
 		this.fullname = fullname;
 		this.roleid = roleid;
+	}
+	
+	public User(int iD, String username, String password, String email, String sdt, String diachi, String fullname,int roleid,String rolename) {
+		ID = iD;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.sdt = sdt;
+		this.diachi = diachi;
+		this.fullname = fullname;
+		this.roleid = roleid;
+		this.rolename = rolename;
 	}
 
 	public int getID() {

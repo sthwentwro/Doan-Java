@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Header -->
   <header>
@@ -7,45 +9,27 @@
           <div class="row"> 
             <!-- Header Language -->
             <div class="col-xs-7 col-sm-6">
-              <div class="dropdown block-language-wrapper hidden-xs"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="template/web/images/english.png" alt="language"> English <span class="caret"></span> </a>
-                <ul class="dropdown-menu" role="menu">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="template/web/images/english.png" alt="language"> English </a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="template/web/images/francais.png" alt="language"> French </a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="template/web/images/german.png" alt="language"> German </a></li>
-                </ul>
-              </div>
-              <!-- End Header Language --> 
-              
-              <!-- Header Currency -->
-              <div class="dropdown block-currency-wrapper hidden-xs"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> £ - Pound </a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
-                </ul>
-              </div>
-              <!-- End Header Currency -->
-              
-              <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+           
+              <div class="welcome-msg hidden-xs">Welcome to our website</div>
             </div>
             <div class="col-xs-5 col-sm-6"> 
               
               <div class="top-cart-contain pull-right"> 
             <!-- Top Cart -->
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">  My Cart <span class="cart_count">2</span></a></div>
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">Giỏ hàng<span class="cart_count">2</span></a></div>
               <div>
                 <div class="top-cart-content" style="display: none;">
                   <div class="actions">
-                    <button class="btn-checkout" title="Checkout" type="button"><span>Checkout</span></button>
-                    <a href="#" class="view-cart" ><span>View Cart</span></a> </div>
+                    <button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button>
+                    <a href="#" class="view-cart" ><span>Xem giỏ hàng</span></a> </div>
                   <!--block-subtitle-->
                   <ul class="mini-products-list" id="cart-sidebar">
                     <li class="item first">
                       <div class="item-inner"><a class="product-image" title="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="template/web/products-images/product.jpg"></a>
                         <div class="product-details">
                           <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
-                          <!--access--> <strong>1</strong> x <span class="price">$179.99</span>
+                          access <strong>1</strong> x <span class="price">$179.99</span>
                           <p class="product-name"><a href="#">timi &amp; leslie Sophia Diaper Bag...</a></p>
                         </div>
                       </div>
@@ -54,7 +38,7 @@
                       <div class="item-inner"><a class="product-image" title="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" href="#"><img alt="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" src="template/web/products-images/product.jpg"></a>
                         <div class="product-details">
                           <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
-                          <!--access--> <strong>1</strong> x <span class="price">$80.00</span>
+                          access <strong>1</strong> x <span class="price">$80.00</span>
                           <p class="product-name"><a href="#">JP Lizzy Satchel Designer Diaper Ba...</a></p>
                         </div>
                       </div>
@@ -119,8 +103,7 @@
                 </div>
                 
               </div>
-              <!-- End Header Top Links --> 
-              
+              <!-- End Header Top Links -->              
             </div>
           </div>
         </div>

@@ -4,20 +4,20 @@
 <nav id="sidebar" class="sidebar">
 	<div class="sidebar-content js-simplebar">
 		<a class="sidebar-brand" href="index.html"> <span
-			class="align-middle">AdminKit</span>
+			class="align-middle">Trang Admin</span>
 		</a>
 
 		<ul class="sidebar-nav">
-			<li class="sidebar-header">Pages</li>
+			<li class="sidebar-header">Trang</li>
 
 			<li class="sidebar-item active"><a class="sidebar-link"
-				href="index.html"> <i class="align-middle"
-					data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+				href="${pageContext.request.contextPath}/admin/"> <i class="align-middle"
+					data-feather="sliders"></i> <span class="align-middle">Bảng điều khiển</span>
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="pages-profile.html"> <i class="align-middle"
-					data-feather="user"></i> <span class="align-middle">Profile</span>
+				href="${pageContext.request.contextPath}/admin/list-user"> <i class="align-middle"
+					data-feather="user"></i> <span class="align-middle">Danh sách user</span>
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"

@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import context.DBContext;
 import entity.User;
@@ -93,5 +95,31 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return user;
+	}
+	public List<User> getListUser(){
+		List<User> listUser = new ArrayList<>();
+		String query = "select a.*,b.RoleName from KhachHang a , Role b\r\n"
+				+ "where a.RoleID=b.RoleID and a.RoleID!=1";
+		try {
+			conn = new DBContext().getConnection();//mo ket noi den sql
+			ps = conn.prepareStatement(query);			
+			//chay cau lenh query
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				listUser.add(new User(rs.getInt(1), 
+						rs.getString(2), 
+						rs.getString(3), 
+						rs.getString(4), 
+						rs.getString(5), 
+						rs.getString(6), 
+						rs.getString(7),
+						rs.getInt(8),
+						rs.getString(9)));
+			}
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listUser;
 	}
 }

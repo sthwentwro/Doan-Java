@@ -63,8 +63,11 @@ public class LoginController extends HttpServlet {
 		AppUtils.storeLoginedUser(request.getSession(), user);
 		
 		int redirectId = -1;
-        try {       	
-            redirectId = Integer.parseInt(request.getParameter("redirectId"));
+        try {
+        	String redirect = request.getParameter("redirectId");
+        	if(!redirect.equals("")) {
+        		redirectId = Integer.parseInt(redirect);
+        	}
         } 
         catch (Exception e) 
         {

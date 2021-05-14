@@ -2,7 +2,7 @@
 <decorators defaultdir="/decorators">
 <!-- Bất cứ url nào có trong thẻ excludes sẽ không dc trang trí bởi sitemesh -->
 	<excludes>
-		
+		<pattern>/admin/login-admin*</pattern>
 	</excludes>
 	<!-- áp dụng layout của file admin-layout cho url /admin/*  -->
 	<decorator name="admin" page="admin-layout.jsp">

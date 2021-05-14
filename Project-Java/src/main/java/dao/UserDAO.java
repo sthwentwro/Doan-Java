@@ -34,7 +34,8 @@ public class UserDAO {
 						rs.getString(4), 
 						rs.getString(5), 
 						rs.getString(6), 
-						rs.getString(7));
+						rs.getString(7),
+						rs.getInt(8));
 			}
 			conn.close();
 		} catch (Exception e) {
@@ -84,7 +85,8 @@ public class UserDAO {
 						rs.getString(4), 
 						rs.getString(5), 
 						rs.getString(6), 
-						rs.getString(7)); 
+						rs.getString(7),
+						rs.getInt(8)); 
 			}
 			conn.close();
 		} catch (Exception e) {

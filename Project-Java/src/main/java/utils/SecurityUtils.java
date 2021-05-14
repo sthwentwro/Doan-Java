@@ -23,4 +23,13 @@ public class SecurityUtils {
 		 
         return false;
     }
+ // Kiểm tra 'request' này có vai trò phù hợp hay không?
+    public static boolean hasPermission(HttpServletRequest request,int roleID) {
+        String urlPattern = UrlPatternUtils.getUrlPattern(request);
+        //kiem tra duong dan vao trang admin thi roleid phai la 1 moi cho vao
+        if(urlPattern.contains("admin") && roleID==1) {
+        	return true;
+        }
+        return false;
+    }
 }

@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/admin/loginadmincontroller.java=UTF-8
 encoding//src/main/java/context/DBContext.java=UTF-8
 encoding//src/main/java/control/LoginController.java=UTF-8
 encoding//src/main/java/control/SignUpController.java=UTF-8

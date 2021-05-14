@@ -8,11 +8,12 @@ public class User {
 	private String sdt;
 	private String diachi;
 	private String fullname;
-	
+	private int roleid;
+	private String rolename;
 	public User() {
 	}
 
-	public User(int iD, String username, String password, String email, String sdt, String diachi, String fullname) {
+	public User(int iD, String username, String password, String email, String sdt, String diachi, String fullname,int roleid) {
 		ID = iD;
 		this.username = username;
 		this.password = password;
@@ -20,6 +21,7 @@ public class User {
 		this.sdt = sdt;
 		this.diachi = diachi;
 		this.fullname = fullname;
+		this.roleid = roleid;
 	}
 
 	public int getID() {
@@ -76,5 +78,21 @@ public class User {
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
+	}
+
+	public int getRoleid() {
+		return roleid;
+	}
+
+	public void setRoleid(int roleId) {
+		this.roleid = roleId;
+	}
+
+	public String getRolename() {
+		return rolename;
+	}
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
 	}	
 }

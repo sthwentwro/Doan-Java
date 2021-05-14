@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -62,11 +63,22 @@ public class SecurityFilter implements Filter {
 	            if (loginedUser == null) {
 	 
 	                String requestUri = req.getRequestURI();
-	 
-	                // Lưu trữ trang hiện tại để redirect đến sau khi đăng nhập thành công.
-	                int redirectId = AppUtils.storeRedirectAfterLoginUrl(req.getSession(), requestUri);
-	 
-	                resp.sendRedirect(wrapRequest.getContextPath() + "/dangnhap?redirectId=" + redirectId);
+	                if(requestUri.contains("admin")) {
+	                	resp.sendRedirect(wrapRequest.getContextPath() +"/admin/login-admin");
+	                	return;
+	                }
+	                else {
+	                	// Lưu trữ trang hiện tại để redirect đến sau khi đăng nhập thành công.
+		                int redirectId = AppUtils.storeRedirectAfterLoginUrl(req.getSession(), requestUri);
+		                
+		                resp.sendRedirect(wrapRequest.getContextPath() + "/dangnhap?redirectId=" + redirectId);
+		                return;
+	                }	                
+	            }
+	         // Kiểm tra người dùng có vai trò hợp lệ hay không?
+	            boolean hasPermission = SecurityUtils.hasPermission(wrapRequest,loginedUser.getRoleid());
+	            if (!hasPermission) {	 
+	            	resp.sendRedirect(wrapRequest.getContextPath() + "/");
 	                return;
 	            }
 	        }

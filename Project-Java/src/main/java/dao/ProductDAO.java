@@ -116,7 +116,7 @@ public class ProductDAO {
 				//chay cau lenh query
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					pr = new Product(rs.getInt("MaPhuKien"),
+					return new Product(rs.getInt("MaPhuKien"),
 							rs.getInt("MaLoaiPK"),
 							rs.getNString("TenPhuKien"),
 							rs.getInt("IDThuongHieu"),
@@ -138,7 +138,7 @@ public class ProductDAO {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			return pr;
+			return null;
 		}
 		
 		public static void main(String[] args) {

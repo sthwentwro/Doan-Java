@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Tai nghe chính hãng</title>
+<title>Danh sach san pham</title>
 </head>
 <body>
 
@@ -65,11 +65,11 @@
       <div class="row">
         <div class="col-xs-12">
           <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
+            <!-- <li><a href="#">Home</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Holiday</a></li>
             <li><a href="#">Jeans</a></li>
-            <li><a href="#">Retis lapen casen</a></li>
+            <li><a href="#">Retis lapen casen</a></li> -->
           </ul>
         </div>
       </div>
@@ -79,34 +79,34 @@
     <div class="container">
       <div class="row">
         <div class="col-main col-sm-9 col-sm-push-3">
-          <div class="category-description std">
+          <!-- <div class="category-description std">
             <div class="slider-items-products">
               <div id="category-desc-slider" class="product-flexslider hidden-buttons">
                 <div class="slider-items slider-width-col1 owl-carousel owl-theme"> 
                   
-                  <!-- Item -->
+                  Item
                   <div class="item"> <a href="#"><img alt="" src="template/web/images/category-img1.jpg"></a>
                     <div class="cat-img-title cat-bg cat-box">
                       <div class="small-tag"><span>Hot Sale</span> 49% OFF</div>
-                      <h2 class="cat-heading">Women Collection</h2>
+                      <h2 class="cat-heading"></h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     </div>
                   </div>
-                  <!-- End Item --> 
+                  End Item 
                   
-                  <!-- Item -->
+                  Item
                   <div class="item"> <a href="#"><img alt="" src="template/web/images/category-img2.jpg"></a> 
                     
-                    <!-- End Item --> 
+                    End Item 
                     
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <article class="col-main">
             <div class="page-title">
-              <h1>Women</h1>
+              <h1>${tenloai}</h1>
             </div>
             <div class="toolbar">
               <div class="sorter">
@@ -201,7 +201,7 @@
               <div class="block-title"> Categories </div>
               <!--block-title--> 
               <!-- BEGIN BOX-CATEGORY -->
-              <div class="box-content box-category">
+              <!-- <div class="box-content box-category">
                 <ul>
                   <li> <a class="active" href="#/women.html">Women</a> <span class="subDropdown minus"></span>
                     <ul class="level0_415" style="display:block">
@@ -211,70 +211,70 @@
                           <li> <a href="#/women/tops/shirts-blouses.html"> Diaper Bags </a> </li>
                           <li> <a href="#/women/tops/tunics.html"> Back Bags </a> </li>
                           <li> <a href="#/women/tops/vests.html"> Hobo handbags </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/women/bags.html"> Jackets </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/women/bags/bags.html"> Bags </a> </li>
                           <li> <a href="#/women/bags/designer-handbags.html"> Designer Handbags </a> </li>
                           <li> <a href="#/women/bags/purses.html"> Purses </a> </li>
                           <li> <a href="#/women/bags/shoulder-bags.html"> Shoulder Bags </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/women/shoes.html"> Shoes </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/women/shoes/flat-shoes.html"> Flat Shoes </a> </li>
                           <li> <a href="#/women/shoes/flat-sandals.html"> Flat Sandals </a> </li>
                           <li> <a href="#/women/shoes/boots.html"> Boots </a> </li>
                           <li> <a href="#/women/shoes/heels.html"> Heels </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/women/Jewellery.html"> Jewellery </a>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/women/Jewellery/bracelets.html"> Bracelets </a> </li>
                           <li> <a href="#/women/Jewellery/necklaces-pendants.html"> Necklaces &amp; Pendants </a> </li>
                           <li> <a href="#/women/Jewellery/pins-brooches.html"> Pins &amp; Brooches </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/women/dresses.html"> Dresses </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/women/dresses/casual-dresses.html"> Casual Dresses </a> </li>
                           <li> <a href="#/women/dresses/evening.html"> Evening </a> </li>
                           <li> <a href="#/women/dresses/designer.html"> Designer </a> </li>
                           <li> <a href="#/women/dresses/party.html"> Party </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
                       
                      
-                      <!--level1-->
+                      level1
                       <li> <a href="#/women/swimwear.html"> Swimwear </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/women/swimwear/swimsuits.html"> Swimsuits </a> </li>
                           <li> <a href="#/women/swimwear/beach-clothing.html"> Beach Clothing </a> </li>
                           <li> <a href="#/women/swimwear/bikinis.html"> Bikinis </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                     </ul>
-                    <!--level0--> 
+                    level0 
                   </li>
-                  <!--level 0-->
+                  level 0
                   <li> <a href="#/men.html">Men</a> <span class="subDropdown plus"></span>
                     <ul class="level0_455" style="display:none">
                       <li> <a href="#/men/shoes.html"> Shoes </a> <span class="subDropdown plus"></span>
@@ -282,56 +282,56 @@
                           <li> <a href="#/men/shoes/flat-shoes.html"> Flat Shoes </a> </li>
                           <li> <a href="#/men/shoes/boots.html"> Boots </a> </li>
                           <li> <a href="#/men/shoes/heels.html"> Heels </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/men/Jewellery.html"> Jewellery </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/men/Jewellery/bracelets.html"> Bracelets </a> </li>
                           <li> <a href="#/men/Jewellery/necklaces-pendants.html"> Necklaces &amp; Pendants </a> </li>
                           <li> <a href="#/men/Jewellery/pins-brooches.html"> Pins &amp; Brooches </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/men/dresses.html"> Dresses </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/men/dresses/casual-dresses.html"> Casual Dresses </a> </li>
                           <li> <a href="#/men/dresses/evening.html"> Evening </a> </li>
                           <li> <a href="#/men/dresses/designer.html"> Designer </a> </li>
                           <li> <a href="#/men/dresses/party.html"> Party </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/men/jackets.html"> Jackets </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/men/jackets/coats.html"> Coats </a> </li>
                           <li> <a href="#/men/jackets/jackets.html"> Jackets </a> </li>
                           <li> <a href="#/men/jackets/leather-jackets.html"> Leather Jackets </a> </li>
                           <li> <a href="#/men/jackets/blazers.html"> Blazers </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/men/swimwear.html"> Swimwear </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/men/swimwear/swimsuits.html"> Swimsuits </a> </li>
                           <li> <a href="#/men/swimwear/beach-clothing.html"> Beach Clothing </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                     </ul>
-                    <!--level0--> 
+                    level0 
                   </li>
-                  <!--level 0-->
+                  level 0
                   <li> <a href="#.html">Electronics</a> <span class="subDropdown plus"></span>
                     <ul class="level0_482" style="display:none">
                       <li> <a href="#/smartphones.html"> Smartphones </a> <span class="subDropdown plus"></span>
@@ -341,11 +341,11 @@
                           <li> <a href="#/smartphones/blackberry.html"> Blackberry </a> </li>
                           <li> <a href="#/smartphones/nokia.html"> Nokia </a> </li>
                           <li> <a href="#/smartphones/htc.html"> HTC </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/cameras.html"> Cameras </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/cameras/digital-cameras.html"> Digital Cameras </a> </li>
@@ -353,11 +353,11 @@
                           <li> <a href="#/cameras/lenses.html"> Lenses </a> </li>
                           <li> <a href="#/cameras/filters.html"> Filters </a> </li>
                           <li> <a href="#/cameras/tripod.html"> Tripod </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                       <li> <a href="#/accesories.html"> Accesories </a> <span class="subDropdown plus"></span>
                         <ul class="level1" style="display:none">
                           <li> <a href="#/accesories/headsets.html"> HeadSets </a> </li>
@@ -365,25 +365,25 @@
                           <li> <a href="#/accesories/screen-protectors.html"> Screen Protectors </a> </li>
                           <li> <a href="#/accesories/memory-cards.html"> Memory Cards </a> </li>
                           <li> <a href="#/accesories/cases.html"> Cases </a> </li>
-                          <!--end for-each -->
+                          end for-each
                         </ul>
-                        <!--level1--> 
+                        level1 
                       </li>
-                      <!--level1-->
+                      level1
                     </ul>
-                    <!--level0--> 
+                    level0 
                   </li>
-                  <!--level 0-->
+                  level 0
                   <li> <a href="#/digital.html">Furniture</a> </li>
-                  <!--level 0-->
+                  level 0
                   <li class="last"> <a href="#/fashion.html">Kids</a> </li>
-                  <!--level 0-->
+                  level 0
                 </ul>
-              </div>
+              </div> -->
               <!--box-content box-category--> 
             </div>
             
-            <div class="block block-cart">
+            <!-- <div class="block block-cart">
               <div class="block-title ">My Cart</div>
               <div class="block-content">
                 <div class="summary">
@@ -408,12 +408,12 @@
                       <strong>1</strong> x <span class="price">$8.00</span>
                       <p class="product-name"> <a href="#">Office Colored Ladies Shirt</a> </p>
                       
-                      <!--access clearfix--> 
+                      access clearfix 
                     </div>
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
             
             
             

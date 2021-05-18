@@ -38,6 +38,7 @@ public class ListProductController extends HttpServlet {
 		String id=request.getParameter("idcategory");
 		int idcategory=Integer.parseInt(id);
 		List<Product> list = dao.getListProductByCategory(idcategory);
+		request.setAttribute("tenloai", list.get(1).getTenloai());
 		request.setAttribute("listP", list);		
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/grid.jsp");
 		rd.forward(request, response);

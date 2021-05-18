@@ -10,10 +10,8 @@
 <body>
 		<div class="card">
 			<div class="card-header">
-				<h5 class="card-title">Danh sách người dùng</h5>
-				<h6 class="card-subtitle text-muted">
-					Add User					
-				</h6>
+				<h4 class="card-title">Danh sách người dùng</h4>
+				<a href="<%=request.getContextPath()%>/admin/list-user/new"><i class="align-middle mr-2" data-feather="user-plus"></i><span class="align-middle">Thêm user</span></a>
 			</div>
 			<table class="table table-bordered">
 				<thead>
@@ -30,7 +28,7 @@
 						<td>${i.username}</td>
 						<td>${i.sdt}</td>
 						<td class="d-none d-md-table-cell">${i.rolename}</td>
-						<td class="table-action"><a href="#"><i
+						<td class="table-action"><a href="<%=request.getContextPath()%>/admin/list-user/edit?id=${i.ID}"><i
 								class="align-middle" data-feather="edit-2"></i></a> <a href="#"><i
 								class="align-middle" data-feather="trash"></i></a></td>
 					</tr>	

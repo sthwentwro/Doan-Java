@@ -53,14 +53,14 @@ public class ProductDAO {
 		}
 		public List<Product> getListProductByCategory(long category_id)  
 		{
-			List<Product> list = new ArrayList<>();
-			String sql = "select *\r\n"
-					+ "from PhuKien where MaLoaiPK=" + category_id +"";
-			
+			List<Product> list = new ArrayList<>();			
+			String sql1 ="select a.*,b.TenLoaiPK \r\n"
+					+ "from PhuKien a, LoaiPhuKien b\r\n"
+					+ "where a.MaLoaiPK ="+ category_id +"and b.MaLoaiPK="+ category_id +"";
 			//PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK where a.MaLoaiPK=
 			try {
 				conn = new DBContext().getConnection();
-				ps = conn.prepareStatement(sql);
+				ps = conn.prepareStatement(sql1);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					list.add(new Product(rs.getInt("MaPhuKien"),
@@ -79,7 +79,8 @@ public class ProductDAO {
 							rs.getDate("ModifiedDate"),
 							rs.getString("ModifiedBy"),
 							rs.getBoolean("Status"),
-							rs.getInt("ViewCount")));
+							rs.getInt("ViewCount"),
+							rs.getNString("TenLoaiPK")));
 				}
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -106,7 +107,6 @@ public class ProductDAO {
 			return list;
 		}
 		public Product getProductbyId(int id) {
-			Product pr = null;
 			String query = "select * from PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK\r\n"
 					+ "where a.MaPhuKien = ?";
 			try {
@@ -132,7 +132,8 @@ public class ProductDAO {
 							rs.getDate("ModifiedDate"),
 							rs.getString("ModifiedBy"),
 							rs.getBoolean("Status"),
-							rs.getInt("ViewCount"));
+							rs.getInt("ViewCount"),
+							rs.getNString("TenLoaiPK"));
 				}
 				conn.close();
 			} catch (Exception e) {

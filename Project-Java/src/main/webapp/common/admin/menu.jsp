@@ -16,7 +16,7 @@
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="${pageContext.request.contextPath}/admin/list-user"> <i class="align-middle"
+				href="${pageContext.request.contextPath}/admin/list-user/"> <i class="align-middle"
 					data-feather="user"></i> <span class="align-middle">Danh sách user</span>
 			</a></li>
 
@@ -93,15 +93,5 @@
 					data-feather="map"></i> <span class="align-middle">Maps</span>
 			</a></li>
 		</ul>
-
-		<div class="sidebar-cta">
-			<div class="sidebar-cta-content">
-				<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-				<div class="mb-3 text-sm">Are you looking for more components?
-				</div>
-				<a href="https://adminkit.io/pricing" target="_blank"
-					class="btn btn-outline-primary btn-block">Upgrade</a>
-			</div>
-		</div>
 	</div>
 </nav>

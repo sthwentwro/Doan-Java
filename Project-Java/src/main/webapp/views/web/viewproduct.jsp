@@ -95,7 +95,7 @@
                   </div>
                   <div class="price-block">
                     <div class="price-box">
-                      <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price">${detail.giaban } </span> </p>
+                      <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price">${detail.giaban }VNĐ </span> </p>
                       <!--<p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> ${detail.giaban } </span> </p>--> 
                     </div>
                     <p class="availability in-stock pull-right"><span>In Stock</span></p>

@@ -36,7 +36,7 @@ public class Product {
 	public Product() {
 		
 	}
-
+	
 	public Product(int iDPhukien, int iDloaiPK, String tenphukien, int iDthuonghieu, String metaTitle,
 			String mota, int soluongton, String noidungSP, int giaban, int giacu, String cover,int baohanh, Date ngaytao,
 			Date ngaycapnhat, String nguoisua, boolean tinhtrang, int luotxem) {
@@ -58,6 +58,30 @@ public class Product {
 		this.nguoisua = nguoisua;
 		this.tinhtrang = tinhtrang;
 		this.luotxem = luotxem;
+	}
+	
+	public Product(int iDPhukien, int iDloaiPK, String tenphukien, int iDthuonghieu, String metaTitle,
+			String mota, int soluongton, String noidungSP, int giaban, int giacu, String cover,int baohanh, Date ngaytao,
+			Date ngaycapnhat, String nguoisua, boolean tinhtrang, int luotxem, String tenloai) {
+		super();
+		IDPhukien = iDPhukien;
+		IDloaiPK = iDloaiPK;
+		this.tenphukien = tenphukien;
+		IDthuonghieu = iDthuonghieu;
+		this.metaTitle = metaTitle;
+		this.mota = mota;
+		this.soluongton = soluongton;
+		this.noidungSP = noidungSP;
+		this.giaban = giaban;
+		this.giacu = giacu;
+		this.cover = cover;
+		this.baohanh = baohanh;
+		this.ngaytao = ngaytao;
+		this.ngaycapnhat = ngaycapnhat;
+		this.nguoisua = nguoisua;
+		this.tinhtrang = tinhtrang;
+		this.luotxem = luotxem;
+		Tenloai = tenloai;
 	}
 
 	public Product(int iDPhukien, int iDloaiPK, String tenphukien, int iDthuonghieu, String metaTitle,

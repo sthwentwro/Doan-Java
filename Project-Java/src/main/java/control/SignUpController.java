@@ -54,7 +54,7 @@ public class SignUpController extends HttpServlet {
 			//nếu không trùng tên đăng nhập thì cho phép đăng ký
 			if(dao.checkUser(username)==null) {
 				if(dao.signup(username, pass, email, sdt, diachi, fullname)) {
-					 response.sendRedirect(request.getContextPath() + "/Home");
+					 response.sendRedirect(request.getContextPath() + "/dangnhap");
 				}
 			}
 			else {

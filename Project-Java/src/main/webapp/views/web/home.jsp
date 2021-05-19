@@ -394,7 +394,8 @@
 	                  <div class="item-title"> <a title="Retis lapen casen" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}">${i.tenphukien}</a> </div>
 	                  <div class="item-content">
 	                    <div class="item-price">
-	                      <div class="price-box"> <span class="regular-price"> <span class="price">${i.giaban}$</span> </span> </div>
+	                      <div class="price-box"> <span class="regular-price"> <span class="price">${i.giaban}</span> </span><small>VND</small>
+	                       </div>
 	                    </div>
 	                  </div>
 	                </div>
@@ -476,7 +477,8 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span> </div>
+                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                       </div>
                                     </div>
                                   </div>
                                 </div>
@@ -517,7 +519,8 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span> </div>
+                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                       </div>
                                     </div>
                                   </div>
                                 </div>
@@ -557,7 +560,8 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span> </div>
+                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                       </div>
                                     </div>
                                   </div>
                                 </div>

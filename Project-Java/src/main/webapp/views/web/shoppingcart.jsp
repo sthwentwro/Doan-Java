@@ -103,7 +103,7 @@
                       <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span></td>
                       <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity }" name=""></td>
                       <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span></td>
-                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien } " ><span><span>Remove item</span></span></a></td>
+                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
                     </tr>
                    </c:forEach> 
                   </tbody>

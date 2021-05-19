@@ -113,7 +113,7 @@
                           <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                         </div>
                       </div>
-                      <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
+                      <a href ="${pageContext.request.contextPath }/cart?&action=buy&id=${detail.IDPhukien }"><button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button></a>
                     </div>
                     <div class="email-addto-box">
                       <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>

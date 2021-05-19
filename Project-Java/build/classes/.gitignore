@@ -1,3 +1,7 @@
+/admin/
 /context/
-/entity/
 /control/
+/dao/
+/entity/
+/filter/
+/utils/

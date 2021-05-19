@@ -152,7 +152,7 @@
               </div>
             </div>
             <div class="category-products">            
-              <ul class="products-grid">
+              <ul class="products-grid">             
               <c:forEach items="${listP}" var="i">  
                 <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
                   <div class="item-inner">

@@ -66,11 +66,11 @@
                       <button aria-label="Close" data-dismiss="modal" class="close" type="button"><img src="template/web/images/interstitial-close.png" alt="close"> </button>
                     </div>
                     <div class="modal-body">
-                      <form class="navbar-form">
+                     <form action="search" method="get" class="search" >
                         <div id="search">
                           <div class="input-group">
-                            <input name="search" placeholder="Search" class="form-control" type="text">
-                            <button type="button" class="btn-search"><i class="fa fa-search"></i></button>
+                            <input name="txt" placeholder="Search" class="form-control" type="text">
+                            <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
                           </div>
                         </div>
                       </form>

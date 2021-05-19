@@ -43,7 +43,10 @@ public class updateusercontroller extends HttpServlet {
 		String diachi = request.getParameter("address").trim();
 		int roleid = Integer.parseInt(request.getParameter("role"));
 		dao = new UserDAO();
-		boolean result = dao.updateUser(id, username, pass, email, sdt, diachi, fullname, roleid);
+		boolean result = false;
+		if(dao.checkUser(username)==null) {
+			result = dao.updateUser(id, username, pass, email, sdt, diachi, fullname, roleid);
+		}		
 		MessageUtils.showMessage(request, result);
 		request.getRequestDispatcher("/views/admin/edituser.jsp").forward(request, response);
 	}

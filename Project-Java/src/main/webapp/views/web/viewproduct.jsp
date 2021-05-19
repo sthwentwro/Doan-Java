@@ -62,8 +62,9 @@
           <div class="product-view">
             <div class="product-next-prev"> <a class="product-next" href="#"><span></span></a> <a class="product-prev" href="#"><span></span></a> </div>
             <div class="product-essential">
-              <form action="#" method="post" id="product_addtocart_form">
-                <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
+              <form action="${pageContext.request.contextPath }/cart" method="get" id="product_addtocart_form">
+                <input name="action" value="buy" type="text" hidden="">
+                <input name="id" value="${detail.IDPhukien}" type="text" hidden="">
                 <div class="product-img-box col-sm-4 col-xs-12">
                   <div class="new-label new-top-left"> New </div>
                   <div class="product-image">
@@ -114,7 +115,7 @@
                           <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                         </div>
                       </div>
-                      <a href ="${pageContext.request.contextPath }/cart?&action=buy&id=${detail.IDPhukien }"><button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button></a>
+                      <%-- <a href ="${pageContext.request.contextPath }/cart?&action=buy&id=${detail.IDPhukien }"> --%><button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="submit"><span>Add to Cart</span></button>
                     </div>
                     <div class="email-addto-box">
                       <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>

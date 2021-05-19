@@ -29,8 +29,8 @@
 						<td>${i.sdt}</td>
 						<td class="d-none d-md-table-cell">${i.rolename}</td>
 						<td class="table-action"><a href="<%=request.getContextPath()%>/admin/list-user/edit?id=${i.ID}"><i
-								class="align-middle" data-feather="edit-2"></i></a> <a href="#"><i
-								class="align-middle" data-feather="trash"></i></a></td>
+								class="align-middle" data-feather="edit-2"></i></a> <button onclick="showMess(${i.ID})"><i
+								class="align-middle" data-feather="trash"></i></button></td>
 					</tr>	
 				</c:forEach>									
 				</tbody>

@@ -39,10 +39,10 @@ public class addusercontroller extends HttpServlet {
 		String pass = request.getParameter("password");
 		String fullname = request.getParameter("fullname");
 		String email = request.getParameter("email");
-		String diachi = request.getParameter("diachi");
-		String sdt = request.getParameter("sdt");
+		String diachi = request.getParameter("address");
+		String sdt = request.getParameter("SDT");
 		boolean result= false;
-		//nếu không trùng tên đăng nhập thì cho phép đăng ký
+		//nếu không trùng tên đăng nhập thì cho phép them
 		if(dao.checkUser(username)==null) {			
 			result = dao.adduser(username, pass, email, sdt, diachi, fullname);			
 		}

@@ -114,5 +114,13 @@
 			});
 		});
 	</script>
+	<script>
+	function showMess(id) {
+		var option = confirm("Bạn có muốn xóa người dùng này");
+		if(option === true){
+			window.location.href ='delete?id='+id;
+		}
+	}
+    </script>
 </body>
 </html>

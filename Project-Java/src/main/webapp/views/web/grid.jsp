@@ -151,47 +151,55 @@
                 </div>
               </div>
             </div>
-            <div class="category-products">            
-              <ul class="products-grid">             
-              <c:forEach items="${listP}" var="i">  
-                <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                  <div class="item-inner">
-                    <div class="item-img">
-                      <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
-                        <div class="new-label new-top-left">New</div>
-                        <div class="actions">
-                          <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                          <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                          <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                          <div class="add_cart">
-                            <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                          </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item-info">
-                      <div class="info-inner">
-                        <div class="item-title"><a href="#" title="Retis lapen casen">${i.tenphukien}</a> </div>
-                        <div class="item-content">
-                          <div class="item-price">
-                            <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
-                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>  
-                </c:forEach>  
-              </ul>
+            <div class="category-products">
+            <c:choose>
+            	<c:when test="${empty listP}">
+            		<h2>Không tìm thấy sản phẩm nào</h2>
+            	</c:when>
+            	<c:otherwise>
+		            	<ul class="products-grid">                       
+		                <c:forEach items="${listP}" var="i">  
+		                <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
+		                  <div class="item-inner">
+		                    <div class="item-img">
+		                      <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
+		                        <div class="new-label new-top-left">New</div>
+		                        <div class="actions">
+		                          <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
+		                          <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
+		                          <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
+		                          <div class="add_cart">
+		                            <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
+		                          </div>
+		                        </div>
+		                        <div class="rating">
+		                          <div class="ratings">
+		                            <div class="rating-box">
+		                              <div class="rating" style="width:80%"></div>
+		                            </div>
+		                            <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
+		                          </div>
+		                        </div>
+		                      </div>
+		                    </div>
+		                    <div class="item-info">
+		                      <div class="info-inner">
+		                        <div class="item-title"><a href="#" title="Retis lapen casen">${i.tenphukien}</a> </div>
+		                        <div class="item-content">
+		                          <div class="item-price">
+		                            <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+		                             </div>
+		                          </div>
+		                        </div>
+		                      </div>
+		                    </div>
+		                  </div>
+		                </li>  
+		                </c:forEach>  
+		              </ul>
+            	</c:otherwise>
+            </c:choose>            
+              
             </div>
           </article>
           <!--	///*///======    End article  ========= //*/// --> 

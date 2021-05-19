@@ -203,7 +203,20 @@ public class UserDAO {
 			}
 			return false;
 		}
-		public static void main(String[] args) {				
+		public boolean deleteUser(String id) {
+			String query = "delete from KhachHang\n"
+		                    +"where IDUser = ?";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);
+				ps.setString(1,id);
+				ps.executeUpdate();
+				conn.close();
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return false;
 		}
 }
 

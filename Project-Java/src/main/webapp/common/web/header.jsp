@@ -22,7 +22,7 @@
                 <div class="top-cart-content" style="display: none;">
                   <div class="actions">
                     <button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button>
-                    <a href="#" class="view-cart" ><span>Xem giỏ hàng</span></a> </div>
+                    <a href="${pageContext.request.contextPath }/cart" class="view-cart" ><span>Xem giỏ hàng</span></a> </div>
                   <!--block-subtitle-->
                   <ul class="mini-products-list" id="cart-sidebar">
                     <li class="item first">

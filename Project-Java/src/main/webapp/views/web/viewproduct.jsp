@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chi tiet san pham</title>
+<title>Chi tiết sản phẩm</title>
 </head>
 <body>
 <nav style="background: url('template/web/images/slide-img1.jpg') repeat top left; height: 170px;">

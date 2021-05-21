@@ -160,18 +160,24 @@
             </div>
             <div class="col-sm-4">
               <div class="discount">
-                <h3>Discount Codes</h3>
+                <h3>Địa chỉ giao hàng</h3>
                 <form method="post" action="#" id="discount-coupon-form">
-                  <label for="coupon_code">Enter your coupon code if you have one.</label>
+                  <label for="coupon_code">Họ tên</label>
                   <input type="hidden" value="0" id="remove-coupone" name="remove">
-                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth">
-                  <button value="Apply Coupon" class="button coupon " title="Apply Coupon" type="button"><span>Apply Coupon</span></button>
+                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.fullname }">
+                  <label for="coupon_code">Số điện thoại</label>
+                  <input type="hidden" value="0" id="remove-coupone" name="remove">
+                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.sdt }" >
+                  <label for="coupon_code">Địa chỉ</label>
+                  <input type="hidden" value="0" id="remove-coupone" name="remove">
+                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.diachi }">
+                  <button value="Apply Coupon" class="button coupon " title="Apply Coupon" type="button"><span>Cập nhật </span></button>
                 </form>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="totals">
-                <h3>Shopping Cart Total</h3>
+                <h3>Tổng cộng đơn hàng</h3>
                 <div class="inner">
                   <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
                     <colgroup>
@@ -180,24 +186,21 @@
                     </colgroup>
                     <tfoot>
                       <tr>
-                        <td colspan="1" class="a-left"><strong>Grand Total</strong></td>
-                        <td class="a-right"><strong><span class="price">$77.38</span></strong></td>
+                        <td colspan="1" class="a-left"><strong>Thành tiền</strong></td>
+                        <td class="a-right"><strong><span class="price">${total } VND</span></strong></td>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
-                        <td colspan="1" class="a-left"> Subtotal </td>
-                        <td class="a-right"><span class="price">$77.38</span></td>
+                        <td colspan="1" class="a-left"> Tạm tính </td>
+                        <td class="a-right"><span class="price">${total } VND</span></td>
                       </tr>
                     </tbody>
                   </table>
                   <ul class="checkout">
                     <li>
-                      <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Proceed to Checkout</span></button>
+                      <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Tiến hành thanh toán</span></button>
                     </li>
-                    <br>
-                    <li><a title="Checkout with Multiple Addresses" href="#">Checkout with Multiple Addresses</a> </li>
-                    <br>
                   </ul>
                 </div>
               </div>

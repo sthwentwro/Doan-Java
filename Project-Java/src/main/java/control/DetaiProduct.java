@@ -12,24 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import entity.Category;
 import entity.Product;
-/**
- * Servlet implementation class DetaiProduct
- */
+
 @WebServlet("/DetaiProduct")
 public class DetaiProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public DetaiProduct() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id = Integer.parseInt(request.getParameter("pid"));
@@ -42,9 +34,6 @@ public class DetaiProduct extends HttpServlet {
 		request.getRequestDispatcher("/views/web/viewproduct.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -1,12 +1,15 @@
 package entity;
 
 public class Category {
-	private int idcategory;
+	private int Idcategory;
+	private String tenloai;
+	
+	
 	public int getIdcategory() {
-		return idcategory;
+		return Idcategory;
 	}
 	public void setIdcategory(int idcategory) {
-		this.idcategory = idcategory;
+		this.Idcategory = idcategory;
 	}
 	public String getTenloai() {
 		return tenloai;
@@ -14,10 +17,10 @@ public class Category {
 	public void setTenloai(String tenloai) {
 		this.tenloai = tenloai;
 	}
-	private String tenloai; 
+	 
 	public Category() {}
 	public Category (int idcategory, String tenloai) {
-		this.idcategory=idcategory;
+		this.Idcategory=idcategory;
 		this.tenloai=tenloai;
 	}
 }

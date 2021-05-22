@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,21 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.CartItem;
+
 import entity.Category;
 import entity.Item;
-import dao.CartItemDAO;
 import dao.ProductDAO;
 
 @WebServlet("/cart")
 public class ShoppingCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ArrayList alCartItems = new ArrayList();
-    private double dblOrderTotal;
-
-    public int getLineItemCount() {
-        return alCartItems.size();
-    }
+  
 	public ShoppingCartController() {
         super();
     }
@@ -92,18 +87,17 @@ public class ShoppingCartController extends HttpServlet {
 		response.sendRedirect(request.getContextPath()+"/cart");
 	}
 
-	protected void doGet_UpdateCart(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession();
-        String strQuantity = request.getParameter("quantity");
-        String strItemIndex = request.getParameter("itemIndex");
-        CartItemDAO cartBean = null;
-        Object objCartBean = session.getAttribute("cart");
-        if (objCartBean != null) {
-            cartBean = (CartItemDAO) objCartBean;
-        } else {
-            cartBean = new CartItemDAO();
-        }
-        cartBean.updateCartItem(strItemIndex, strQuantity);
+	protected void doGet_UpdateCart(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
+		HttpSession session = request.getSession();
+        List<Item> cart = (List<Item>)session.getAttribute("cart");
+        //lay danh sách các giá trị số lượng của từng sản phẩm trong giỏ hàng
+        String[] quantity = request.getParameterValues("quantity");
+        //set lại số lượng của từng sản phẩm
+        for (int i = 0; i < cart.size(); i++) {
+			cart.get(i).setQuantity(Integer.parseInt(quantity[i]));
+		}
+        session.setAttribute("cart", cart);
+        response.sendRedirect(request.getContextPath()+"/cart");
     } 
 	
 	

@@ -52,8 +52,6 @@ public class ProductDAO {
 			return list;
 		}
 		
-<<<<<<< Updated upstream
-=======
 		public List<Product> getListProduct(){
 			List<Product> list = new ArrayList<>();
 			String query = "select a.*,b.TenLoaiPK\r\n"
@@ -89,7 +87,6 @@ public class ProductDAO {
 			}
 			return list;
 		}
->>>>>>> Stashed changes
 		public List<Product> getListProductByCategory(long category_id)  
 		{
 			List<Product> list = new ArrayList<>();			
@@ -130,7 +127,7 @@ public class ProductDAO {
 		public List<Category> getListCategory()  
 		{
 			List<Category> list = new ArrayList<>();
-			String sql = "select *from LoaiPhuKien ";
+			String sql = "select * from LoaiPhuKien ";
 			
 			//PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK where a.MaLoaiPK=
 			try {

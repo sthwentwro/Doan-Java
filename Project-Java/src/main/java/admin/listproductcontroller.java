@@ -63,7 +63,7 @@ public class listproductcontroller extends HttpServlet {
 	private void showEditProduct(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("listca", dao.getListCategory());//lay danh sach loai san pham
+		request.setAttribute("listc", dao.getListCategory());//lay danh sach loai san pham
 		request.setAttribute("detail", dao.getProductbyId(id));
 		request.getServletContext().getRequestDispatcher("/views/admin/editproduct.jsp").forward(request, response);
 	}

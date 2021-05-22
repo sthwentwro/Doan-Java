@@ -53,13 +53,15 @@
 						<label for="inputState" class="col-form-label col-sm-2 form-label w-100">Loại sản phẩm</label> 
 						<div class="col-sm-2">
 						<select id="inputState"	class="form-control" name="loai">
-							<c:forEach items="listca" var="i">
+							<c:forEach items="${listc}" var="i">
 								<c:choose>
-									<c:when test="${i.idcategory == detail.IDloaiPK}">
-	            		               <option value=i.idcategory selected>i.tenloai</option>
+									<c:when test="${detail.IDloaiPK == i.idcategory}">
+	            		               <option value=${ i.idcategory} selected>${i.tenloai}</option>
 	            	                </c:when>
-								</c:choose>
-							   
+	            	                <c:otherwise>
+								         <option value=${ i.idcategory}>${i.tenloai}</option>
+								   </c:otherwise>
+								</c:choose>								   
 							</c:forEach>							
 						</select>
 						</div>

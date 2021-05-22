@@ -67,7 +67,7 @@
             <h1>Shopping Cart</h1>
           </div>
           <div class="table-responsive">
-            <form method="post" action="#">           
+            <form method="post" action="${pageContext.request.contextPath }/cart?action=updatecart">           
               <fieldset>
                 <table class="data-table cart-table" id="shopping-cart-table">
                   <thead>
@@ -86,27 +86,27 @@
                     <tr class="first last">
                       <td class="a-right last" colspan="50">
                         <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Continue Shopping</span></button></a>
-                        <a href="./doGet_UpdateCart"><button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button></a>
+                        <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button>
                         <button id="empty_cart_button" class="button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span>Clear Cart</span></button></td>
                     </tr>
                   </tfoot>
                   <tbody>    
                   <c:set var="total" value="0"></c:set>
-                  <c:forEach items="${sessionScope.cart }" var="item">
-                  <c:if test="${ not empty item}"></c:if>
-                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
-                    <tr class="first odd">
-                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
-                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
-                      <td class="a-center hidden-table"><a title="Edit item parameters" class="edit-bnt" href="#"></a></td>
-                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax" href="#">Move</a></td>
-                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
-                      </td>
-                      <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity }" name=""></td>
-                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
-                      </td>
-                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
-                    </tr>
+                  <c:forEach items="${sessionScope.cart}" var="item">
+	                  <c:if test="${ not empty item}"></c:if>
+	                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
+	                    <tr class="first odd">
+	                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
+	                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
+	                      <td class="a-center hidden-table"><a title="Edit item parameters" class="edit-bnt" href="#"></a></td>
+	                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax" href="#">Move</a></td>
+	                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
+	                      </td>
+	                      <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity}" name="quantity"></td>
+	                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
+	                      </td>
+	                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
+	                    </tr>
                    </c:forEach> 
                   </tbody>
                 </table>

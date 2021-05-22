@@ -11,20 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import entity.CartItem;
 import entity.Category;
 import entity.Item;
+import dao.CartItemDAO;
 import dao.ProductDAO;
 
 @WebServlet("/cart")
 public class ShoppingCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private ArrayList alCartItems = new ArrayList();
+    private double dblOrderTotal;
+
+    public int getLineItemCount() {
+        return alCartItems.size();
+    }
 	public ShoppingCartController() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");	//Khai báo chuỗi hành động là Action		
-		ProductDAO dao = new ProductDAO();
 		if(action ==null) {
 			doGet_DisplayCart(request, response); //Nếu không làm gì cả thì để trưng giỏ hàng
 		}else {
@@ -34,9 +41,10 @@ public class ShoppingCartController extends HttpServlet {
 			}else if(action.equalsIgnoreCase("remove")) { //Còn muốn không mua sản phẩm đó
 				doGet_Remove(request,response);				//Remove nó ra khỏi giỏ hàng
 			}else if(action.equalsIgnoreCase("updatecart"))
-				doGet_UpdateCart(request,response);
+				doGet_UpdateCart(request,response); 
 		}
-	}//
+		
+	}
 
 	protected void doGet_DisplayCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductDAO dao = new ProductDAO();
@@ -83,18 +91,21 @@ public class ShoppingCartController extends HttpServlet {
 		}
 		response.sendRedirect(request.getContextPath()+"/cart");
 	}
+
+	protected void doGet_UpdateCart(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        String strQuantity = request.getParameter("quantity");
+        String strItemIndex = request.getParameter("itemIndex");
+        CartItemDAO cartBean = null;
+        Object objCartBean = session.getAttribute("cart");
+        if (objCartBean != null) {
+            cartBean = (CartItemDAO) objCartBean;
+        } else {
+            cartBean = new CartItemDAO();
+        }
+        cartBean.updateCartItem(strItemIndex, strQuantity);
+    } 
 	
-	protected void doGet_UpdateCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-				String qty = request.getParameter("qty");
-				//Tạo một session 
-				HttpSession session = request.getSession();
-				List<Item> attribute = (List<Item>) session.getAttribute("cart"); //Ràng buộc danh sách Item với "cart"
-				List<Item> cart = attribute;
-				int id = Integer.parseInt(request.getParameter("id")); //Khai báo id kiểu int và chuyển qua chuỗi
-				int index = isExisting( cart,id);
-				session.setAttribute("cart", cart); 
-				response.sendRedirect(request.getContextPath()+"/cart");		
-	}
 	
 	//Hàm kiểm tra có tồn tại hay không
 	private int isExisting( List<Item> cart, int id) {		

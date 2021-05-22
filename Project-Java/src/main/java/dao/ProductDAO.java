@@ -51,6 +51,7 @@ public class ProductDAO {
 			}
 			return list;
 		}
+		
 		public List<Product> getListProductByCategory(long category_id)  
 		{
 			List<Product> list = new ArrayList<>();			
@@ -106,6 +107,9 @@ public class ProductDAO {
 			}
 			return list;
 		}
+		
+		
+		
 		public Product getProductbyId(int id) {
 			String query = "select * from PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK\r\n"
 					+ "where a.MaPhuKien = ?";
@@ -176,6 +180,7 @@ public class ProductDAO {
 			}
 			return list;
 		}
+		
 		
 		public static void main(String[] args) {
 			ProductDAO dao = new ProductDAO();

@@ -86,7 +86,7 @@
                     <tr class="first last">
                       <td class="a-right last" colspan="50">
                         <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Continue Shopping</span></button></a>
-                        <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button>
+                        <a href="./doGet_UpdateCart"><button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button></a>
                         <button id="empty_cart_button" class="button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span>Clear Cart</span></button></td>
                     </tr>
                   </tfoot>
@@ -115,65 +115,9 @@
           </div>
           <!-- BEGIN CART COLLATERALS -->
           <div class="cart-collaterals row">
-            <div class="col-sm-4">
-              <div class="shipping">
-                <h3>Estimate Shipping and Tax</h3>
-                <div class="shipping-form">
-                  <form id="shipping-zip-form" method="post" action="#">
-                    <p>Enter your destination to get a shipping estimate.</p>
-                    <ul class="form-list">
-                      <li>
-                        <label class="required" for="country"><em>*</em>Country</label>
-                        <div class="input-box">
-                          <select title="Country" class="validate-select" id="country" name="country_id">
-                            <option value=""> </option>
-                            <option value="AF">Afghanistan</option>
-                            <option value="AX">Åland Islands</option>
-                            <option value="AL">Albania</option>
-                          </select>
-                        </div>
-                      </li>
-                      <li>
-                        <label for="region_id">State/Province</label>
-                        <div class="input-box">
-                          <select title="State/Province" name="region_id" id="region_id">
-                            <option value="">Please select region, state or province</option>
-                            <option value="1" title="Alabama">Alabama</option>
-                            <option value="2" title="Alaska">Alaska</option>
-                          </select>
-                        </div>
-                      </li>
-                      <li>
-                        <label for="postcode">Zip/Postal Code</label>
-                        <div class="input-box">
-                          <input type="text" name="estimate_postcode" id="postcode" class="input-text validate-postcode">
-                        </div>
-                      </li>
-                    </ul>
-                    <div class="buttons-set11">
-                      <button class="button get-quote" title="Get a Quote" type="button"><span>Get a Quote</span></button>
-                    </div>
-                    <!--buttons-set11-->
-                  </form>
-                </div>
-              </div>
+            <div class="col-sm-4"> 
             </div>
             <div class="col-sm-4">
-              <div class="discount">
-                <h3>Địa chỉ giao hàng</h3>
-                <form method="post" action="#" id="discount-coupon-form">
-                  <label for="coupon_code">Họ tên</label>
-                  <input type="hidden" value="0" id="remove-coupone" name="remove">
-                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.fullname }">
-                  <label for="coupon_code">Số điện thoại</label>
-                  <input type="hidden" value="0" id="remove-coupone" name="remove">
-                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.sdt }" >
-                  <label for="coupon_code">Địa chỉ</label>
-                  <input type="hidden" value="0" id="remove-coupone" name="remove">
-                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth" value="${loginedUser.diachi }">
-                  <button value="Apply Coupon" class="button coupon " title="Apply Coupon" type="button"><span>Cập nhật </span></button>
-                </form>
-              </div>
             </div>
             <div class="col-sm-4">
               <div class="totals">

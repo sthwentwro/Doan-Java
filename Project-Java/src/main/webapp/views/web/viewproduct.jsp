@@ -103,7 +103,7 @@
                     <p class="availability in-stock pull-right"><span>In Stock</span></p>
                   </div>
                   <div class="short-description">
-                    <h2>${detail.mota }</h2>
+                    <h2>${detail.mota}</h2>
                     
                   </div>
                   <div class="add-to-box">

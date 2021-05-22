@@ -117,7 +117,6 @@
       <div class="slider-items-products">
         <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
           <div class="slider-items slider-width-col6"> 
-            
             <!-- Item -->
             <div class="item"><a href="#"><img src="template/web/images/b-logo3.png" alt="Image"></a> </div>
             <!-- End Item --> 

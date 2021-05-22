@@ -11,7 +11,7 @@ import entity.Category;
 import entity.Product;
 
 public class ProductDAO {
-	//ket noi sql
+	    //ket noi sql
 		Connection conn = null;
 		//cau lenh sql
 		PreparedStatement ps = null;
@@ -52,6 +52,44 @@ public class ProductDAO {
 			return list;
 		}
 		
+<<<<<<< Updated upstream
+=======
+		public List<Product> getListProduct(){
+			List<Product> list = new ArrayList<>();
+			String query = "select a.*,b.TenLoaiPK\r\n"
+					+ "from PhuKien a, LoaiPhuKien b\r\n"
+					+ "where a.MaLoaiPK = b.MaLoaiPK";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					list.add(new Product(rs.getInt("MaPhuKien"),
+							rs.getInt("MaLoaiPK"),
+							rs.getNString("TenPhuKien"),
+							rs.getInt("IDThuongHieu"),
+							rs.getString("MetaTitle"),
+							rs.getNString("Mota"),
+							rs.getInt("Soluongton"),
+							rs.getNString("NoiDungSP"),
+							rs.getInt("GiaBan"),
+							rs.getInt("GiaCu"),
+							rs.getString("Cover"),
+							rs.getInt("BaoHanh"),
+							rs.getDate("CreatedDate"),
+							rs.getDate("ModifiedDate"),
+							rs.getString("ModifiedBy"),
+							rs.getBoolean("Status"),
+							rs.getInt("ViewCount"),
+							rs.getNString("TenLoaiPK")));
+				}
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+>>>>>>> Stashed changes
 		public List<Product> getListProductByCategory(long category_id)  
 		{
 			List<Product> list = new ArrayList<>();			
@@ -111,7 +149,9 @@ public class ProductDAO {
 		
 		
 		public Product getProductbyId(int id) {
-			String query = "select * from PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK\r\n"
+			String query = "select a.*,b.TenLoaiPK,c.TenThuongHieu\r\n"
+					+ "from PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK \r\n"
+					+ " join ThuongHieu c on a.IDThuongHieu = c.IDThuongHieu\r\n"
 					+ "where a.MaPhuKien = ?";
 			try {
 				conn = new DBContext().getConnection();//mo ket noi den sql
@@ -137,6 +177,7 @@ public class ProductDAO {
 							rs.getString("ModifiedBy"),
 							rs.getBoolean("Status"),
 							rs.getInt("ViewCount"),
+							rs.getString("TenThuongHieu"),
 							rs.getNString("TenLoaiPK"));
 				}
 				conn.close();

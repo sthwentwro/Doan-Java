@@ -35,6 +35,10 @@
 	</div>
 	<!-- JavaScript -->
 	<script src="${pageContext.request.contextPath}/template/admin/js/app.js"></script>
+	<script src="${pageContext.request.contextPath}/template/admin/ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace('editor');
+	</script>
 	<script>
 		$(function() {
 			var ctx = document.getElementById('chartjs-dashboard-line').getContext("2d");

@@ -21,8 +21,8 @@
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="pages-settings.html"> <i class="align-middle"
-					data-feather="settings"></i> <span class="align-middle">Settings</span>
+				href="${pageContext.request.contextPath}/admin/list-product?action=list"> <i class="align-middle"
+					data-feather="settings"></i> <span class="align-middle">Danh sách sản phẩm</span>
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"

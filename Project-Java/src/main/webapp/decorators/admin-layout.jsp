@@ -37,7 +37,13 @@
 	<script src="${pageContext.request.contextPath}/template/admin/js/app.js"></script>
 	<script src="${pageContext.request.contextPath}/template/admin/ckeditor/ckeditor.js"></script>
 	<script>
+	    CKEDITOR.config.pasteFromWordPromptCleanup = true;
+	    CKEDITOR.config.language = "vi";
+	    CKEDITOR.config.htmlEncodeOutput = false;
+	    CKEDITOR.config.entities = false;
+	    CKEDITOR.config.ProcessHTMLEntities = false;
 		CKEDITOR.replace('editor');
+		CKEDITOR.replace('editor1');
 	</script>
 	<script>
 		$(function() {
@@ -122,7 +128,15 @@
 	function showMess(id) {
 		var option = confirm("Bạn có muốn xóa người dùng này");
 		if(option === true){
-			window.location.href ='delete?id='+id;
+			window.location.href ='list-user/delete?id='+id;
+		}
+	}
+    </script>
+    <script>
+	function showMessProduct(id) {
+		var option = confirm("Bạn có muốn xóa sản phẩm này");
+		if(option === true){
+			window.location.href ='list-product?action=delete&id='+id;
 		}
 	}
     </script>

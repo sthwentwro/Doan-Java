@@ -12,7 +12,7 @@ import dao.UserDAO;
 /**
  * Servlet implementation class listusercontroller
  */
-@WebServlet(urlPatterns = {"/admin/list-user/"})
+@WebServlet(urlPatterns = {"/admin/list-user/","/admin/list-user"})
 public class listusercontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDAO dao;  
@@ -30,7 +30,21 @@ public class listusercontroller extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("listUser", dao.getListUser());
+		String page = request.getParameter("page");
+		//neu page rong thi cho vao trang 1
+		int index = 1 ;
+		if(page != null) {
+			index = Integer.parseInt(page);
+		}
+	
+		int count = dao.getTotalUser();//lay tong so user
+		int endPage = count/8;
+		if(count % 8 !=0) {
+			endPage++;
+		}
+		request.setAttribute("tag", index);
+		request.setAttribute("endP", endPage);
+		request.setAttribute("listUser", dao.pagingUser(index));
 		request.getRequestDispatcher("/views/admin/listuser.jsp").forward(request, response);			
 	}		
 }

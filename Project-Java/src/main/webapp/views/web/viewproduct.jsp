@@ -140,8 +140,7 @@
                  <div id="productTabContent" class="tab-content">
                   <div class="tab-pane fade in active" id="product_tabs_description">
                     <div class="std">
-                      <p>${detail.mota }</p>
-                     
+                      <p>${detail.noidungSP}</p>                    
                     </div>     
                   </div>                        
                 </div>

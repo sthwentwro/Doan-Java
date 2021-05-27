@@ -36,5 +36,12 @@
 				</tbody>
 			</table>
 		</div>
+		<ul class="pagination pagination-md">
+			<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+			<c:forEach begin="1" end="${endP}" var="p">
+			   <li class="page-item ${tag == p ? "active":""}"><a class="page-link" href="<%=request.getContextPath()%>/admin/list-user?page=${p}">${p}</a></li>
+			</c:forEach>	
+			<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+		</ul>
 </body>
 </html>

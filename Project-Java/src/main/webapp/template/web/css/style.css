@@ -92,8 +92,8 @@ button {
 }
 
 /* list/grid toolbar*/
-.toolbar span.button-active.button-grid, {
-background-color:#C2A476!important;
+.toolbar span.button-active.button-grid {
+background-color:#C2A476 !important;
 }
 .toolbar a.button-grid {
 	background-color: #f4f4f4!important;
@@ -835,7 +835,7 @@ ul#cart-sidebar {
 	
 }
 .top-cart-content .product-details .btn-edit:hover {
-	color: #339bold;
+	color: #339 bold;
 }
 .top-cart-content .actions {
 	padding: 25px;
@@ -6802,7 +6802,7 @@ ol#compare-items li.last {
 	background-color: #FFFFFF;
 	padding: 0px 0px 0px 0px;
 	overflow: hidden;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 21px;
 	margin-top:0px;
 }

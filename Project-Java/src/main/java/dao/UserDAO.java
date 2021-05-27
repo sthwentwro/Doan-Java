@@ -16,7 +16,7 @@ public class UserDAO {
 	PreparedStatement ps = null;
 	//ket qua du kieu tra ve
 	ResultSet rs = null;
-	
+		
 	public User getUser(String username,String pass){
 		User user = null;
 		String query = "select * from KhachHang where Username=? and Password=?";
@@ -217,6 +217,52 @@ public class UserDAO {
 				e.printStackTrace();
 			}
 			return false;
+		}
+		//dem so luong user
+		public int getTotalUser() {
+			String query = "select count(*) from KhachHang where RoleID != 1";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					return rs.getInt(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return 0;
+		}
+		//hàm trả về danh sách khách hàng
+		public List<User> pagingUser(int index){
+			List<User> listUser = new ArrayList<>();
+			String query = "select a.*,b.RoleName from KhachHang a , Role b\r\n"
+					+ "where a.RoleID=b.RoleID and a.RoleID!=1 order by a.IDUser\r\n"
+					+ "offset ? rows fetch next 8 rows only";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);	
+				ps.setInt(1, (index-1)*8);
+				//chay cau lenh query
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					listUser.add(new User(rs.getInt(1), 
+							rs.getString(2), 
+							rs.getString(3), 
+							rs.getString(4), 
+							rs.getString(5), 
+							rs.getString(6), 
+							rs.getString(7),
+							rs.getInt(8),
+							rs.getString(9)));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return listUser;
+		}
+		public static void main(String[] args) {
+			UserDAO dao= new UserDAO();
 		}
 }
 

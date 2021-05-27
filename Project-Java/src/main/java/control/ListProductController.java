@@ -43,7 +43,20 @@ public class ListProductController extends HttpServlet {
 			request.setAttribute("listc", listc);
 			String id=request.getParameter("idcategory");
 			int idcategory=Integer.parseInt(id);
-			List<Product> list = dao.getListProductByCategory(idcategory);
+			String page = request.getParameter("page");
+			//neu page rong thi cho vao trang 1
+			int index = 1 ;
+			if(page != null) {
+				index = Integer.parseInt(page);
+			}
+			int count = dao.getTotalProductByCategory(idcategory);//lay tong so user
+			int endPage = count/6;
+			if(count % 6 !=0) {
+				endPage++;
+			}		
+			List<Product> list = dao.getListProductByCategory(idcategory,index);
+			request.setAttribute("tag", index);
+			request.setAttribute("endP", endPage);
 			request.setAttribute("tenloai", list.get(1).getTenloai());
 			request.setAttribute("listP", list);		
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web/grid.jsp");

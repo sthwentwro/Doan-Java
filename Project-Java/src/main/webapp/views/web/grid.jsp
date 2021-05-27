@@ -124,28 +124,14 @@
                   </li>
                 </ul>
                 <a class="button-asc left" href="#" title="Set Descending Direction"><span class="top_arrow"></span></a> </div>
-              <div class="pager">
-                <div id="limiter">
-                  <label>View: </label>
-                  <ul>
-                    <li><a href="#">15<span class="right-arrow"></span></a>
-                      <ul>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#">30</a></li>
-                        <li><a href="#">35</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+              <div class="pager">              
                 <div class="pages">
                   <label>Page:</label>
                   <ul class="pagination">
                     <li><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <c:forEach begin="1" end="${endP}" var="p">
+                    	<li class="${tag == p ? "active":""}"><a href="danhsachsanpham?idcategory=${param.idcategory}&page=${p}">${p}</a></li>
+                    </c:forEach>                                      
                     <li><a href="#">&raquo;</a></li>
                   </ul>
                 </div>

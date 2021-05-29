@@ -17,32 +17,35 @@
               <div class="top-cart-contain pull-right"> 
             <!-- Top Cart -->
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">Giỏ hàng<span class="cart_count">2</span></a></div>
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">Giỏ hàng<span class="cart_count"></span></a></div>
               <div>
                 <div class="top-cart-content" style="display: none;">
                   <div class="actions">
-                    <button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button>
+                  <a href="${pageContext.request.contextPath}/CheckoutController" ><button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button></a>  
                     <a href="${pageContext.request.contextPath }/cart" class="view-cart" ><span>Xem giỏ hàng</span></a> </div>
                   <!--block-subtitle-->
                   <ul class="mini-products-list" id="cart-sidebar">
-                    <li class="item first">
-                      <div class="item-inner"><a class="product-image" title="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="template/web/products-images/product.jpg"></a>
-                        <div class="product-details">
-                          <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
-                          access <strong>1</strong> x <span class="price">$179.99</span>
-                          <p class="product-name"><a href="#">timi &amp; leslie Sophia Diaper Bag...</a></p>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="item last">
-                      <div class="item-inner"><a class="product-image" title="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" href="#"><img alt="JP Lizzy Satchel Designer Diaper Bag - Slate Citron" src="template/web/products-images/product.jpg"></a>
-                        <div class="product-details">
-                          <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
-                          access <strong>1</strong> x <span class="price">$80.00</span>
-                          <p class="product-name"><a href="#">JP Lizzy Satchel Designer Diaper Ba...</a></p>
-                        </div>
-                      </div>
-                    </li>
+                       <tbody>    
+                  <c:set var="total" value="0"></c:set>
+                  <c:forEach items="${sessionScope.cart }" var="item">
+                  <c:if test="${ not empty item}"></c:if>
+                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
+                    <tr class="first odd">
+                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
+                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
+                      <td class="a-center hidden-table"><a title="Edit item parameters"></a></td>
+                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax">Move</a></td>
+                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
+                      </td>
+                      <td class="a-center movewishlist"><span>${item.quantity }</span></td>
+                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
+                      </td>
+                
+                    </tr>
+                   
+                   </c:forEach> 
+                   
+                  </tbody>
                   </ul>
                   <!--actions--> 
                 </div>

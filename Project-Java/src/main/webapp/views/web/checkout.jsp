@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/common/taglib.jsp"%>
+    <%@ include file="/common/taglib.jsp"%>
+    <%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+     <%@ page import="java.util.Date" %>
+       <%@ page import="java.text.SimpleDateFormat" %>	
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Shopping cart</title>
+<meta charset="UTF-8">
+  
+<title>Check Out</title>
 </head>
 <body>
-
 <nav style="background: url('template/web/images/slide-img1.jpg') repeat top left; height: 170px;">
     <div class="container">
           <!-- Header Logo -->
@@ -54,20 +54,23 @@
             		<c:otherwise>
             		    <li class="level1 first"><a href="danhsachsanpham?idcategory=${item.idcategory}"><span>${item.tenloai}</span></a></li>
             		</c:otherwise>
-            	</c:choose>            	             
+            	</c:choose>    
+            	        	             
             </c:forEach>
-           </ul>                        
+             
+           </ul>                       
     </div>
   </nav>
-  <section class="main-container col1-layout">
+  <section class="main-container col2-right-layout bounceInUp animated">
     <div class="main container">
-      <div class="col-main">
-        <div class="cart">
+      <div class="row">
+        <div class="col-main col-sm-9">
           <div class="page-title">
-            <h1>Shopping Cart</h1>
-          </div>
-          <div class="table-responsive">
-            <form method="post" action="${pageContext.request.contextPath }/cart?action=updatecart">           
+            <h1>Thanh Toán</h1>
+          </div>          
+                  <c:set var="total" value="0"></c:set>
+                  <div class="table-responsive">
+                  <form method="post" action="#">           
               <fieldset>
                 <table class="data-table cart-table" id="shopping-cart-table">
                   <thead>
@@ -85,45 +88,34 @@
                   <tfoot>
                     <tr class="first last">
                       <td class="a-right last" colspan="50">
-                        <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Continue Shopping</span></button></a>
-                        <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button>
-                        <button id="empty_cart_button" class="button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span>Clear Cart</span></button></td>
+                        <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Tiếp Tục Mua Hàng</span></button></a>
+                        
                     </tr>
                   </tfoot>
                   <tbody>    
                   <c:set var="total" value="0"></c:set>
-                  <c:forEach items="${sessionScope.cart}" var="item">
-	                  <c:if test="${ not empty item}"></c:if>
-	                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
-	                    <tr class="first odd">
-	                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
-	                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
-	                      <td class="a-center hidden-table"><a title="Edit item parameters" class="edit-bnt" href="#"></a></td>
-	                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax" href="#">Move</a></td>
-	                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
-	                      </td>
-	                      <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity}" name="quantity"></td>
-	                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
-	                      </td>
-	                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
-	                    </tr>
+                  <c:forEach items="${sessionScope.cart }" var="item">
+                  <c:if test="${ not empty item}"></c:if>
+                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
+                    <tr class="first odd">
+                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
+                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
+                      <td class="a-center hidden-table"><a title="Edit item parameters"></a></td>
+                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax">Move</a></td>
+                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
+                      </td>
+                      <td class="a-center movewishlist"><span>${item.quantity }</span></td>
+                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
+                      </td>
+                
+                    </tr>
+                   
                    </c:forEach> 
+                   
                   </tbody>
+                  
                 </table>
-              </fieldset>
-            </form>
-          </div>
-          <!-- BEGIN CART COLLATERALS -->
-          <div class="cart-collaterals row">
-            <div class="col-sm-4"> 
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-              <div class="totals">
-                <h3>Tổng cộng đơn hàng</h3>
-                <div class="inner">
-                  <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
+                    <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
                     <colgroup>
                     <col>
                     <col width="1">
@@ -141,21 +133,43 @@
                       </tr>
                     </tbody>
                   </table>
-                  <ul class="checkout">
-                    <li>
-                     <a href="CheckoutController"> <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Tiến hành thanh toán</span></button></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!--inner--> 
-              
-            </div>
-          </div>
-          
-          <!--cart-collaterals--> 
-          
+              </fieldset>
+            </form>
+          </div>           
         </div>
+        <aside class="col-right sidebar col-sm-3">
+          <div class="block block-progress">
+            <div class="block-title ">Thông Tin Giao Hàng</div>
+           <div class="discount">
+							<form method="post" action="${pageContext.request.contextPath}/PurChaseController" id="discount-coupon-form">
+								<label for="coupon_code">Họ tên </label> <input type="hidden"
+									value="0" id="remove-coupone" name="remove"> <p>
+									
+									 ${loginedUser.fullname }</p>
+								<label for="coupon_code">Số điện thoại</label> <input
+									type="hidden" value="0" id="remove-coupone" name="remove">
+								
+									<p>${loginedUser.sdt }</p>
+								<label for="coupon_code">Địa chỉ</label> <input type="hidden"
+									value="0" id="remove-coupone" name="remove"> 
+									<p>${loginedUser.diachi }</p>
+									
+			
+										<label for="coupon_code">Ngày Giao <span class="required">(Sau ngày đặt ít nhất 1 ngày)</span></label> 
+									
+								 <div class="form-group">
+ 									  
+ 									<input type="date" name="bday2" max="3000-12-31" 
+       								 min="1000-01-01" class="form-control">
+       								   
+									</div>
+									
+									
+									 <button id="send2" name="" type="submit" class="button login"><span>Xác Nhận Thanh Toán</span></button>
+							</form>
+						</div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

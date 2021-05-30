@@ -110,7 +110,10 @@ public class ShoppingCartController extends HttpServlet {
 		}
 		return -1; //Còn không thì thôi
 	}
-	
+	public int count(List<Item> cart)
+	{
+		return cart.size();
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

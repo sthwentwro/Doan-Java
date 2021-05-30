@@ -17,7 +17,7 @@
               <div class="top-cart-contain pull-right"> 
             <!-- Top Cart -->
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">Giỏ hàng<span class="cart_count"></span></a></div>
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="#">Giỏ hàng<span class="cart_count" >${sessionScope.cart.size() }</span></a></div>
               <div>
                 <div class="top-cart-content" style="display: none;">
                   <div class="actions">

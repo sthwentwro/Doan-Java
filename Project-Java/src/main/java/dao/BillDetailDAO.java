@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import context.DBContext;
 import entity.Bill;
 import entity.BillDetail;
+import entity.Product;
 
 public class BillDetailDAO {
 	Connection conn = null;
@@ -38,14 +41,47 @@ public class BillDetailDAO {
 			}
 			return false;
 	  }
+	  public boolean updateslProduct(int sl ,int IdPhukien)
+		{
+			String query = "update PhuKien \r\n"
+					+ " set Soluongton = ?\r\n"	
+					+ "where MaPhuKien = ?";			
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);		
+				ps.setInt(1, sl);
+				ps.setInt(2, IdPhukien);
+				ps.executeUpdate();
+				conn.close();
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+	  public int getSoluongTon(int ID){
+			
+		  String query = "select Soluongton from PhuKien  where MaPhuKien = ?";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);		
+				ps.setInt(1, ID);
+				
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					return rs.getInt(1);
+							
+				}
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return 0;
+		}
 	  public static void main(String[] args) {
 			BillDetailDAO bd = new BillDetailDAO();
-			BillDetail b = new BillDetail();
-			b.setMaDonHang(1);
-			b.setMaPhuKien(10);
-			b.setDongia(10000);
-			b.setSoluong(10);
-			boolean kg = bd.addBillDetail(b);
+			
+			System.out.print(bd.getSoluongTon(10));
 	  }
 	 
 }

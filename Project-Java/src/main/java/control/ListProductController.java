@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import entity.Category;
 import entity.Item;
 import entity.Product;
+import entity.Thuonghieu;
 
 /**
  * Servlet implementation class ListProductController
@@ -37,30 +39,55 @@ public class ListProductController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");	//Khai báo chuỗi hành động là Action
 		ProductDAO dao = new ProductDAO();
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
 		if(action ==null) {
-			//lay danh sach cac loai san pham
+			String idth = request.getParameter("idth");
 			List<Category> listc = dao.getListCategory();
 			request.setAttribute("listc", listc);
-			String id=request.getParameter("idcategory");
-			int idcategory=Integer.parseInt(id);
-			String page = request.getParameter("page");
-			//neu page rong thi cho vao trang 1
-			int index = 1 ;
-			if(page != null) {
-				index = Integer.parseInt(page);
+			if(idth != null) {
+				int idth1 = Integer.parseInt(idth);
+				String index1 = request.getParameter("page");
+				//Neu page rong thi cho vao trang 1
+				if(index1==null) {
+					index1 ="1";
+				}
+				int indexPage= Integer.parseInt(index1);
+				int count = dao.getTotalTH(idth1);
+				int endPage = count/6;
+				if(count%6 != 0) {
+					endPage++;
+				}
+				List<Product> list = th.getListTheoTH(idth1,indexPage);
+				request.setAttribute("tag", indexPage);
+				request.setAttribute("endP", endPage);
+				request.setAttribute("listP", list);	
+				request.setAttribute("thuonghieu", thuonghieu);
+				RequestDispatcher rd = request.getRequestDispatcher("/views/web/grid.jsp");
+				rd.forward(request, response);
+			} else {
+				String id=request.getParameter("idcategory");
+				int idcategory=Integer.parseInt(id);
+				String page = request.getParameter("page");
+				//neu page rong thi cho vao trang 1
+				int index = 1 ;
+				if(page != null) {
+					index = Integer.parseInt(page);
+				}
+				int count = dao.getTotalProductByCategory(idcategory);//lay tong so user
+				int endPage = count/6;
+				if(count % 6 !=0) {
+					endPage++;
+				}		
+				List<Product> list = dao.getListProductByCategory(idcategory,index);
+				request.setAttribute("tag", index);
+				request.setAttribute("endP", endPage);
+				request.setAttribute("tenloai", list.get(1).getTenloai());
+				request.setAttribute("listP", list);	
+				request.setAttribute("thuonghieu", thuonghieu);
+				RequestDispatcher rd = request.getRequestDispatcher("/views/web/grid.jsp");
+				rd.forward(request, response);
 			}
-			int count = dao.getTotalProductByCategory(idcategory);//lay tong so user
-			int endPage = count/6;
-			if(count % 6 !=0) {
-				endPage++;
-			}		
-			List<Product> list = dao.getListProductByCategory(idcategory,index);
-			request.setAttribute("tag", index);
-			request.setAttribute("endP", endPage);
-			request.setAttribute("tenloai", list.get(1).getTenloai());
-			request.setAttribute("listP", list);		
-			RequestDispatcher rd = request.getRequestDispatcher("/views/web/grid.jsp");
-			rd.forward(request, response);
 		}else {
 			//So sánh 2 chuỗi hành động
 			if(action.equalsIgnoreCase("buy")) {  //Nếu là hành động mua "buy"

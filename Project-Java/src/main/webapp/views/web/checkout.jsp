@@ -28,18 +28,9 @@
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Thương hiệu</span> </a>
               <ul class="level1" style="display: none;">
-                <li class="level1 first"><a href="#"><span>OEM</span></a></li>
-                <li class="level1 nav-10-2"> <a href="#"> <span>Nilkin</span> </a> </li>
-                <li class="level1 nav-10-3"> <a href="#"> <span>MiPow</span> </a> </li>
-                <li class="level1 nav-10-4"> <a href="#"> <span>Gor</span> </a> </li>
-                <li class="level1 first parent"><a href="#"><span>Baseus</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>               
+              <c:forEach items="${thuonghieu}" var="item">
+                <li class="level1 nav-10-2"> <a href="danhsachsanpham?idth=${item.IDThuongHieu}"> <span>${item.tenThuongHieu}</span> </a> </li>   
+              </c:forEach>              
               </ul>
             </li>
             <li class="mega-menu"><a href="#" class="level-top"><span>About Us</span></a>

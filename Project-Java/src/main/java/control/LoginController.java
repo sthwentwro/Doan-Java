@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import dao.UserDAO;
 import entity.Category;
+import entity.Thuonghieu;
 import entity.User;
 import utils.AppUtils;
 
@@ -39,6 +41,9 @@ public class LoginController extends HttpServlet {
 		//lay danh sach cac loai san pham
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
 		rd.forward(request, response);
 	}

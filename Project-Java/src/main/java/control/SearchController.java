@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import entity.Category;
 import entity.Product;
+import entity.Thuonghieu;
 
 /**
  * Servlet implementation class SearchController
@@ -38,10 +40,13 @@ public class SearchController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String txtSearch =request.getParameter("txt");
 		ProductDAO dao = new ProductDAO();
+		ThuonghieuDAO th = new ThuonghieuDAO();
+		List<Thuonghieu> thuonghieu = th.getAll();
 		List<Product> list = dao.searchByName(txtSearch);
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
 		request.setAttribute("listP", list);
+		request.setAttribute("thuonghieu", thuonghieu);
 		request.getRequestDispatcher("/views/web/grid.jsp").forward(request, response);
 	}
 

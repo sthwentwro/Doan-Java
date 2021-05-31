@@ -91,6 +91,42 @@ public class ProductDAO {
 			return list;
 		}
 		
+		public List<Product> getListTheoTH(String idth,int index)  
+		{
+			List<Product> list = new ArrayList<>();					
+			String query = "select * from PhuKien a,ThuongHieu b where a.IDThuongHieu=b.IDThuongHieu and a.IDThuongHieu=?  order by a.IDThuongHieu offset ? rows fetch next 6 rows only";
+			try {
+				conn = new DBContext().getConnection();
+				ps = conn.prepareStatement(query);
+				ps.setNString(0, idth);
+				ps.setInt(1,(index-1)*6);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					list.add(new Product(rs.getInt("MaPhuKien"),
+							rs.getInt("MaLoaiPK"),
+							rs.getNString("TenPhuKien"),
+							rs.getInt("IDThuongHieu"),
+							rs.getString("MetaTitle"),
+							rs.getNString("Mota"),
+							rs.getInt("Soluongton"),
+							rs.getNString("NoiDungSP"),
+							rs.getInt("GiaBan"),
+							rs.getInt("GiaCu"),
+							rs.getString("Cover"),
+							rs.getInt("BaoHanh"),
+							rs.getDate("CreatedDate"),
+							rs.getDate("ModifiedDate"),
+							rs.getString("ModifiedBy"),
+							rs.getBoolean("Status"),
+							rs.getInt("ViewCount"),
+							rs.getNString("TenLoaiPK")));
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+		
 		public List<Product> getListProductByCategory(int category_id,int index)  
 		{
 			List<Product> list = new ArrayList<>();					
@@ -99,7 +135,6 @@ public class ProductDAO {
 					+ "where a.MaLoaiPK = "+ category_id +" and b.MaLoaiPK="+ category_id +"\r\n"
 					+ "order by a.MaPhuKien\r\n"
 					+ "offset ? rows fetch next 6 rows only";
-			//PhuKien a join LoaiPhuKien b on a.MaLoaiPK=b.MaLoaiPK where a.MaLoaiPK=
 			try {
 				conn = new DBContext().getConnection();
 				ps = conn.prepareStatement(query);
@@ -306,6 +341,23 @@ public class ProductDAO {
 			}
 			return list;
 		}
+		
+		public int getTotalTH(int thuonghieu_id) {
+			String query = "select count(*) from PhuKien a,ThuongHieu b where a.IDThuongHieu=b.IDThuongHieu and a.IDThuongHieu=?";
+			try {
+				conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, thuonghieu_id);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					return rs.getInt(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return 0;
+		}
+		
 		public int getTotalProductByCategory(int category_id) {
 			String query = "select count(*)\r\n"
 					+ "from PhuKien a, LoaiPhuKien b\r\n"
@@ -373,8 +425,6 @@ public class ProductDAO {
 		}
 		public static void main(String[] args) throws ParseException {
 			ProductDAO dao = new ProductDAO();
-			int pr = dao.getTotalProductByCategory(3);
-			System.out.print(pr);
 			}
 		}
 		 

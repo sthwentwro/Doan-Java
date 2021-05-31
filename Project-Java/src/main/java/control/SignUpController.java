@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import dao.UserDAO;
 import entity.Category;
+import entity.Thuonghieu;
 
 /**
  * Servlet implementation class SignUpController
@@ -31,8 +33,11 @@ public class SignUpController extends HttpServlet {
 		//lay danh sach cac loai san pham
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		request.getRequestDispatcher("views/web/signup.jsp").forward(request, response);
-	}
+	}//
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

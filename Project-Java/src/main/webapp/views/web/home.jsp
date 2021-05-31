@@ -25,18 +25,9 @@
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Thương hiệu</span> </a>
               <ul class="level1" style="display: none;">
-                <li class="level1 first"><a href="#"><span>OEM</span></a></li>
-                <li class="level1 nav-10-2"> <a href="#"> <span>Nilkin</span> </a> </li>
-                <li class="level1 nav-10-3"> <a href="#"> <span>MiPow</span> </a> </li>
-                <li class="level1 nav-10-4"> <a href="#"> <span>Gor</span> </a> </li>
-                <li class="level1 first parent"><a href="#"><span>Baseus</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>               
+              <c:forEach items="${thuonghieu}" var="item">
+                <li class="level1 nav-10-2"> <a href="danhsachsanpham?idth=${item.IDThuongHieu}"> <span>${item.tenThuongHieu}</span> </a> </li>   
+              </c:forEach>              
               </ul>
             </li>
             <li class="mega-menu"><a href="#" class="level-top"><span>About Us</span></a>
@@ -61,7 +52,7 @@
             <!-- SLIDE  -->
             <li data-index="rs-16" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="template/web/images/slide-img1.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description=""> 
               <!-- MAIN IMAGE --> 
-              <img src="template/web/images/slide-img1.jpg" alt=""> 
+              <img src="https://cdn.tgdd.vn/Files/2016/11/10/911830/top-4-nguyen-nhan-khien-dien-thoai-phat-no-va-cach-khac-phuc-3.jpg" alt=""> 
               <!-- LAYERS --> 
               
               <!-- LAYER NR. 1 -->
@@ -86,7 +77,7 @@
 
 									data-elementdelay="0.05" 
 									
-									style="z-index: 5; white-space: nowrap;">SEASON SALE</div>
+									style="z-index: 5; white-space: nowrap;">Tránh phát nổ điện thoại</div>
               
               <!-- LAYER NR. 2 -->
               <div class="tp-caption NotGeneric-SubTitle   tp-resizeme rs-parallaxlevel-0" 
@@ -108,7 +99,7 @@
 									data-responsive_offset="on" 
 
 									
-									style="z-index: 6; white-space: nowrap;">Superb ecommerce store is updated regularly with offers.</div>
+									style="z-index: 6; white-space: nowrap;">Điện thoại phát nổ, nguyên nhân và cách khắc phục</div>
               
               <!-- LAYER NR. 3 -->
               <div class="tp-caption NotGeneric-Icon   tp-resizeme rs-parallaxlevel-0" 
@@ -155,7 +146,7 @@
 									data-responsive_offset="on" 
 
 									
-									style="z-index: 7; white-space: nowrap;"><a href="#">Learn More</a></div>
+									style="z-index: 7; white-space: nowrap;"><a href="https://www.dienmayxanh.com/kinh-nghiem-hay/top-4-nguyen-nhan-khien-dien-thoai-phat-no-va-cach-911830">Tìm hiểu thêm</a></div>
             </li>
             <!-- SLIDE  -->
             
@@ -368,15 +359,13 @@
 	        	<div class="item">
 	            <div class="item-inner">
 	              <div class="item-img">
-	                <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}"> <img alt="Retis lapen casen" src="${i.cover}"> </a>
+	                <div class="item-img-info"> <a class="product-image" title="${i.tenphukien}" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}"> <img alt="Retis lapen casen" src="${i.cover}"> </a>
 	                  <div class="new-label new-top-left">new</div>
 	                  <div class="box-timer">
 	                      <div class="countbox_2 timer-grid"></div>
 	                    </div>
 	                  <div class="actions">
 	                    <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-	                    <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-	                    <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
 	                    <p data-original-title="Out of Stock" title="" data-placement="right" data-toggle="tooltip" class="availability out-of-stock"><span class="ava-out-of-stock">Out of stock</span></p>
 	                  </div>
 	                  <div class="rating">
@@ -391,7 +380,7 @@
 	              </div>
 	              <div class="item-info">
 	                <div class="info-inner">
-	                  <div class="item-title"> <a title="Retis lapen casen" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}">${i.tenphukien}</a> </div>
+	                  <div class="item-title"> <a title="${i.tenphukien}" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}">${i.tenphukien}</a> </div>
 	                  <div class="item-content">
 	                    <div class="item-price">
 	                      <div class="price-box"> <span class="regular-price"> <span class="price">${i.giaban}</span> </span><small>VND</small>
@@ -452,12 +441,10 @@
 	                        <li class="item item-animate wide-first">
                             <div class="item-inner">
                               <div class="item-img">
-                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen" class="product-image"><img src="${i.cover}" alt="San pham"></a>
+                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}" class="product-image"><img src="${i.cover}" alt="San pham"></a>
                       
                                   <div class="actions">
                                     <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                                    <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                                    <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
                                     <div class="add_cart">
                                      <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
                                     </div>
@@ -474,7 +461,7 @@
                               </div>
                               <div class="item-info">
                                 <div class="info-inner">
-                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
+                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
                                       <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
@@ -495,11 +482,9 @@
                         	<li class="item item-animate wide-first">
                             <div class="item-inner">
                               <div class="item-img">
-                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
+                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
                                             <div class="actions">
                                     <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                                    <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                                    <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
                                     <div class="add_cart">
                                        <a href="${pageContext.request.contextPath }/cart?action=buy&qty=1&id=${i.IDPhukien }"><button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button></a>
                                     </div>
@@ -516,7 +501,7 @@
                               </div>
                               <div class="item-info">
                                 <div class="info-inner">
-                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
+                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
                                       <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
@@ -536,11 +521,9 @@
                         	<li class="item item-animate wide-first">
                             <div class="item-inner">
                               <div class="item-img">
-                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
+                                <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
                                             <div class="actions">
                                     <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                                    <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                                    <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
                                     <div class="add_cart">
                                       <a href="${pageContext.request.contextPath }/cart?action=buy&qty=1&id=${i.IDPhukien }"><button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button></a>
                                     </div>
@@ -557,7 +540,7 @@
                               </div>
                               <div class="item-info">
                                 <div class="info-inner">
-                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="Retis lapen casen">${i.tenphukien}</a> </div>
+                                  <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
                                       <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>

@@ -17,9 +17,11 @@ import javax.servlet.http.HttpSession;
 
 import dao.BillDAO;
 import dao.BillDetailDAO;
+import dao.ThuonghieuDAO;
 import entity.Bill;
 import entity.BillDetail;
 import entity.Item;
+import entity.Thuonghieu;
 import entity.User;
 
 /**
@@ -47,6 +49,9 @@ public class PurChaseController extends HttpServlet {
 		{
 			response.sendRedirect(request.getContextPath()+"/");
 		}
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		
 	}
 
@@ -54,7 +59,6 @@ public class PurChaseController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		HttpSession s = request.getSession();			
 		List<Item> attribute = (List<Item>) s.getAttribute("cart");
 		User loginedUser = (User) s.getAttribute("loginedUser");
@@ -99,11 +103,8 @@ public class PurChaseController extends HttpServlet {
 			bdetail.setDongia(item.getProduct().getGiaban());
 			bdetail.setSoluong(item.getQuantity());
 			
-			BillDetailDAO bde = new BillDetailDAO();	
+			BillDetailDAO bde = new BillDetailDAO();
 			bde.addBillDetail(bdetail);
-			int soluongconlai = bde.getSoluongTon(item.getProduct().getIDPhukien()) - item.getQuantity();
-			bde.updateslProduct(soluongconlai, item.getProduct().getIDPhukien());
-			
 
 
 		}

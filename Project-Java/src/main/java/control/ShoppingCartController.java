@@ -15,7 +15,9 @@ import javax.servlet.http.HttpSession;
 
 import entity.Category;
 import entity.Item;
+import entity.Thuonghieu;
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 
 @WebServlet("/cart")
 public class ShoppingCartController extends HttpServlet {
@@ -44,6 +46,9 @@ public class ShoppingCartController extends HttpServlet {
 	protected void doGet_DisplayCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductDAO dao = new ProductDAO();
 		request.setAttribute("listc", dao.getListCategory());
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		request.getRequestDispatcher("/views/web/shoppingcart.jsp").forward(request, response);
 	}
 	
@@ -110,10 +115,7 @@ public class ShoppingCartController extends HttpServlet {
 		}
 		return -1; //Còn không thì thôi
 	}
-	public int count(List<Item> cart)
-	{
-		return cart.size();
-	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

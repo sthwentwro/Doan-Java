@@ -28,18 +28,9 @@
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Thương hiệu</span> </a>
               <ul class="level1" style="display: none;">
-                <li class="level1 first"><a href="#"><span>OEM</span></a></li>
-                <li class="level1 nav-10-2"> <a href="#"> <span>Nilkin</span> </a> </li>
-                <li class="level1 nav-10-3"> <a href="#"> <span>MiPow</span> </a> </li>
-                <li class="level1 nav-10-4"> <a href="#"> <span>Gor</span> </a> </li>
-                <li class="level1 first parent"><a href="#"><span>Baseus</span></a> 
-                  <!--sub sub category-->
-                  <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                    <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                    <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
-                  </ul>
-                  <!--sub sub category--> 
-                </li>               
+              <c:forEach items="${thuonghieu}" var="item">
+                <li class="level1 nav-10-2"> <a href="danhsachsanpham?idth=${item.IDThuongHieu}"> <span>${item.tenThuongHieu}</span> </a> </li>   
+              </c:forEach>              
               </ul>
             </li>
             <li class="mega-menu"><a href="#" class="level-top"><span>About Us</span></a>
@@ -62,6 +53,7 @@
   <section class="main-container col1-layout">
     <div class="main container">
       <div class="col-main">
+      <c:if test="${ sessionScope.cart.size()>0}">
         <div class="cart">
           <div class="page-title">
             <h1>Shopping Cart</h1>
@@ -74,8 +66,6 @@
                     <tr class="first last">
                       <th rowspan="1">&nbsp;</th>
                       <th rowspan="1"><span class="nobr">Product Name</span></th>
-                      <th rowspan="1" class="hidden-phone"></th>
-                      <th rowspan="1" class="hidden-phone"><span class="nobr">Move to Wishlist</span></th>
                       <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
                       <th class="a-center " rowspan="1">Qty</th>
                       <th colspan="1" class="a-center">Subtotal</th>
@@ -87,19 +77,16 @@
                       <td class="a-right last" colspan="50">
                         <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Continue Shopping</span></button></a>
                         <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button>
-                        <button id="empty_cart_button" class="button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span>Clear Cart</span></button></td>
                     </tr>
                   </tfoot>
                   <tbody>    
                   <c:set var="total" value="0"></c:set>
-                  <c:forEach items="${sessionScope.cart}" var="item">
-	                  <c:if test="${ not empty item}"></c:if>
+                  
+                  <c:forEach items="${sessionScope.cart}" var="item"> 
 	                  <c:set var="total" value="${total + item.product.giaban * item.quantity }"></c:set>
 	                    <tr class="first odd">
 	                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
-	                      <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
-	                      <td class="a-center hidden-table"><a title="Edit item parameters" class="edit-bnt" href="#"></a></td>
-	                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax" href="#">Move</a></td>
+	                      <td><h2 class="product-name"> <a href="${pageContext.request.contextPath}/DetaiProduct?pid=${item.product.IDPhukien}">${item.product.tenphukien }</a> </h2></td>
 	                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
 	                      </td>
 	                      <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity}" name="quantity"></td>
@@ -107,7 +94,7 @@
 	                      </td>
 	                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
 	                    </tr>
-                   </c:forEach> 
+                   </c:forEach>         
                   </tbody>
                 </table>
               </fieldset>
@@ -118,6 +105,15 @@
             <div class="col-sm-4"> 
             </div>
             <div class="col-sm-4">
+              <div class="discount">
+                <h3>Discount Codes</h3>
+                <form method="post" action="#" id="discount-coupon-form">
+                  <label for="coupon_code">Enter your coupon code if you have one.</label>
+                  <input type="hidden" value="0" id="remove-coupone" name="remove">
+                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth">
+                  <button value="Apply Coupon" class="button coupon " title="Apply Coupon" type="button"><span>Apply Coupon</span></button>
+                </form>
+              </div>
             </div>
             <div class="col-sm-4">
               <div class="totals">
@@ -149,13 +145,18 @@
                 </div>
               </div>
               <!--inner--> 
-              
             </div>
           </div>
-          
           <!--cart-collaterals--> 
-          
         </div>
+           </c:if>
+           <c:if test="${sessionScope.cart.size()<=0 }">
+           	<div class="text-center">
+           		<img alt="" src="https://gioquanhanh.com/extension/product/img/cart-empty.png">
+           		<h5 style="margin-bottom: 20px">Không có sản phẩm nào trong giỏ hàng của bạn</h5>
+           		<a class="btn btn-info"  href="${pageContext.request.contextPath }/Home">Tiếp tục mua hàng</a>
+           	</div>
+           </c:if>
       </div>
     </div>
   </section>

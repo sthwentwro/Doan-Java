@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import entity.Category;
 import entity.Product;
+import entity.Thuonghieu;
 
 /**
  * Servlet implementation class HomeController
@@ -38,6 +40,9 @@ public class HomeController extends HttpServlet {
 		request.setAttribute("listP", list);
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		//chuyen huong sang trang chu
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 		rd.forward(request, response);

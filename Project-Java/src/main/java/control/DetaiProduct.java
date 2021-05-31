@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import entity.Category;
 import entity.Product;
+import entity.Thuonghieu;
 
 @WebServlet("/DetaiProduct")
 public class DetaiProduct extends HttpServlet {
@@ -31,6 +33,9 @@ public class DetaiProduct extends HttpServlet {
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
 		request.setAttribute("detail", p);
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		request.getRequestDispatcher("/views/web/viewproduct.jsp").forward(request, response);
 	}
 

@@ -1,4 +1,6 @@
 <!-- Footer -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
   <footer>
     <div class="footer-inner">
       <div class="container">
@@ -12,7 +14,6 @@
                 <li><a href="#" title="faq">FAQ</a></li>
                 <li><a href="#" title="Popular Searches">Specials</a></li>
                 <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
-
               </ul>
             </div>
             <div class="footer-column pull-left">
@@ -22,8 +23,7 @@
                 <li><a title="Information" href="#">Customer Service</a></li>
                 <li><a title="Addresses" href="#">Company</a></li>
                 <li><a title="Addresses" href="#">Investor Relations</a></li>
-                <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
-               
+                <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>              
               </ul>
             </div>
             <div class="footer-column pull-left">
@@ -63,7 +63,6 @@
                   <li class="youtube pull-left"><a href="#"></a></li>
                 </ul>
               </div>
-              
             </div>
           </div>
         </div>
@@ -71,16 +70,14 @@
       <div class="container">
       <div class="col-sm-12 col-xs-12 footer-logo"><img alt="Datson" src="${pageContext.request.contextPath}/template/web/images/logo.png"></div>
       <address>
-          <i class="fa fa-map-marker"></i>ThemesGround, 789 Main rd, Anytown, CA 12345  USA <i class="fa fa-mobile"></i><span> +(888) 123-4567</span> <i class="fa fa-envelope"></i><span> superb@phukien.com</span>
+          <i class="fa fa-map-marker"></i>475A Điện Biên Phủ, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh <i class="fa fa-mobile"></i><span> +0916081126</span> <i class="fa fa-envelope"></i><span> superb@phukien.com</span>
           </address>
       </div>
     </div>
-    
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-xs-12 coppyright">&copy; 2021 All Rights Reserved.</div>
-          
         </div>
       </div>
     </div>

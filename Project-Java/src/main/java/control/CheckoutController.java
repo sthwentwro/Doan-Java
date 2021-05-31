@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ProductDAO;
+import dao.ThuonghieuDAO;
 import entity.Category;
 import entity.Item;
+import entity.Thuonghieu;
 
 /**
  * Servlet implementation class CheckoutController
@@ -44,6 +46,9 @@ public class CheckoutController extends HttpServlet {
 		ProductDAO dao = new ProductDAO();
 		List<Category> listc = dao.getListCategory();
 		request.setAttribute("listc", listc);
+		ThuonghieuDAO th = new ThuonghieuDAO();	
+		List<Thuonghieu> thuonghieu = th.getAll();
+		request.setAttribute("thuonghieu", thuonghieu);
 		request.getRequestDispatcher("/views/web/checkout.jsp").forward(request, response);
 		
 		

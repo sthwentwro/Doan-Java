@@ -22,7 +22,7 @@ public class LogoutController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//xoa session luu nguoi dung
-		request.getSession().invalidate();
+		request.getSession().setAttribute("loginedUser", null);
 		//chuyen huong ve trang chu
 		response.sendRedirect(request.getContextPath()+"/");
 	}

@@ -140,5 +140,13 @@
 		}
 	}
     </script>
+    <script>
+	function showMessOrder(id) {
+		var option = confirm("Bạn có muốn xóa đơn hàng này");
+		if(option === true){
+			window.location.href ='list-order?action=delete&id='+id;
+		}
+	}
+    </script>
 </body>
 </html>

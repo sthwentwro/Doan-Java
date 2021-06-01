@@ -87,11 +87,19 @@
                   </div>
                   <div class="price-block">
                     <div class="price-box">
-                      <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price">${detail.giaban } </span><small>VND</small>
+                      <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"><fmt:formatNumber value="${detail.giaban }" type="number" maxFractionDigits="3"/></span><small>VND</small>
                        </p>
                       <!--<p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> ${detail.giaban } </span> </p>--> 
                     </div>
-                    <p class="availability in-stock pull-right"><span>In Stock</span></p>
+                    <c:choose>
+                    	<c:when test="${detail.soluongton > 0}">
+                    		<p class="availability in-stock pull-right"><span>Còn hàng</span></p>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<p class="availability out-of-stock pull-right"><span>Hết hàng</span></p>
+                    	</c:otherwise>
+                    </c:choose>
+                    
                   </div>
                   <div class="short-description">
                     <h2>${detail.mota}</h2>
@@ -101,12 +109,20 @@
                     <div class="add-to-cart">
                       <div class="pull-left">
                         <div class="custom pull-left">
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="fa fa-minus">&nbsp;</i></button>
+                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="reduced items-count" type="button"><i class="fa fa-minus">&nbsp;</i></button>
                           <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
+                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) && qty < ${detail.soluongton}) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                         </div>
                       </div>
-                      <%-- <a href ="${pageContext.request.contextPath }/cart?&action=buy&id=${detail.IDPhukien }"> --%><button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="submit"><span>Add to Cart</span></button>
+                      <c:choose>
+                    	<c:when test="${detail.soluongton > 0}">
+                    		<button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="submit"><span>Add to Cart</span></button>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="submit" disabled="disabled"><span>Add to Cart</span></button>
+                    	</c:otherwise>
+                    </c:choose>
+                      <%-- <a href ="${pageContext.request.contextPath }/cart?&action=buy&id=${detail.IDPhukien }"> --%>
                     </div>
                     <div class="email-addto-box">
                       <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>

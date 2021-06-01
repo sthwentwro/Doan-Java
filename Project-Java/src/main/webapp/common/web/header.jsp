@@ -21,7 +21,7 @@
               <div>
                 <div class="top-cart-content" style="display: none;">
                   <div class="actions">
-                    <a href="${pageContext.request.contextPath}/CheckoutController"><button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button></a>
+                    <a href="${pageContext.request.contextPath}/thanhtoan"><button class="btn-checkout" title="Checkout" type="button"><span>Thanh toán</span></button></a>
                     <a href="${pageContext.request.contextPath }/cart" class="view-cart" ><span>Xem giỏ hàng</span></a> </div>
                   <!--block-subtitle-->
                   
@@ -34,7 +34,7 @@
                       <div class="item-inner"><a class="product-image" title="${item.product.tenphukien }" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="${item.product.cover}"></a>
                         <div class="product-details">
                           <!--access--> <strong>${item.quantity }</strong> x <span class="price">${item.product.giaban }</span><small>VND</small>
-                          <p class="product-name"><a href="#">${item.product.tenphukien }</a></p>
+                          <p class="product-name"><a href="DetaiProduct?pid=${item.product.IDPhukien}">${item.product.tenphukien }</a></p>
                         </div>
                       </div>
                     </li>

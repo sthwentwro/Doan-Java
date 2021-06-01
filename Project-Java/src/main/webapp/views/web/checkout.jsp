@@ -67,12 +67,11 @@
                   <thead>
                     <tr class="first last">
                       <th rowspan="1">&nbsp;</th>
-                      <th rowspan="1"><span class="nobr">Product Name</span></th>
+                      <th rowspan="1"><span class="nobr">Tên sản phẩm</span></th>
                       <th rowspan="1" class="hidden-phone"></th>
-                      <th rowspan="1" class="hidden-phone"><span class="nobr">Move to Wishlist</span></th>
-                      <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
-                      <th class="a-center " rowspan="1">Qty</th>
-                      <th colspan="1" class="a-center">Subtotal</th>
+                      <th colspan="1" class="a-center"><span class="nobr">Giá</span></th>
+                      <th class="a-center " rowspan="1">Số lượng</th>
+                      <th colspan="1" class="a-center">Tổng cộng</th>
                       <th class="a-center" rowspan="1">&nbsp;</th>
                     </tr>
                   </thead>
@@ -92,7 +91,6 @@
                       <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
                       <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
                       <td class="a-center hidden-table"><a title="Edit item parameters"></a></td>
-                      <td class="a-center hidden-table"><a class="link-wishlist1 use-ajax">Move</a></td>
                       <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
                       </td>
                       <td class="a-center movewishlist"><span>${item.quantity }</span></td>
@@ -133,29 +131,26 @@
             <div class="block-title ">Thông Tin Giao Hàng</div>
            <div class="discount">
 							<form method="post" action="${pageContext.request.contextPath}/PurChaseController" id="discount-coupon-form">
-								<label for="coupon_code">Họ tên </label> <input type="hidden"
+								<strong><label for="coupon_code">Họ tên </label></strong> <input type="hidden"
 									value="0" id="remove-coupone" name="remove"> <p>
 									
 									 ${loginedUser.fullname }</p>
-								<label for="coupon_code">Số điện thoại</label> <input
+								<strong><label for="coupon_code">Số điện thoại</label></strong> <input
 									type="hidden" value="0" id="remove-coupone" name="remove">
 								
 									<p>${loginedUser.sdt }</p>
-								<label for="coupon_code">Địa chỉ</label> <input type="hidden"
-									value="0" id="remove-coupone" name="remove"> 
-									<p>${loginedUser.diachi }</p>
+								<strong><label for="coupon_code">Địa chỉ giao hàng</label></strong> 
+								<input type="text" name="diachi" id="coupon_code" class="input-text fullwidth" value="${loginedUser.diachi}" required="required">
 									
 			
-										<label for="coupon_code">Ngày Giao <span class="required">(Sau ngày đặt ít nhất 1 ngày)</span></label> 
+								<label for="coupon_code">Ngày Giao <span class="required">(Sau ngày đặt ít nhất 1 ngày)</span></label> 
 									
 								 <div class="form-group">
- 									  
+ 									<fmt:formatDate var="fmtDate" value="<%=new java.util.Date()%>" pattern="yyyy-MM-dd"/>    
  									<input type="date" name="bday2" max="3000-12-31" 
-       								 min="1000-01-01" class="form-control">
+       								 min="${fmtDate}" class="form-control">
        								   
-									</div>
-									
-									
+									</div>																	
 									 <button id="send2" name="" type="submit" class="button login"><span>Xác Nhận Thanh Toán</span></button>
 							</form>
 						</div>

@@ -74,12 +74,14 @@ public class SecurityFilter implements Filter {
 		                return;
 	                }	                
 	            }
-	         // Kiểm tra người dùng có vai trò hợp lệ hay không?
-	            boolean hasPermission = SecurityUtils.hasPermission(wrapRequest,loginedUser.getRoleid());
-	            if (!hasPermission) {	 
-	            	resp.sendRedirect(wrapRequest.getContextPath() + "/");
-	                return;
-	            }
+	            if(req.getRequestURI().contains("admin")) {
+	            	// Kiểm tra người dùng có vai trò hợp lệ hay không?
+		            boolean hasPermission = SecurityUtils.hasPermission(wrapRequest,loginedUser.getRoleid());
+		            if (!hasPermission) {	 
+		            	resp.sendRedirect(wrapRequest.getContextPath() + "/");
+		                return;
+		            }
+	            }	         
 	        }
 		// pass the request along the filter chain
 		chain.doFilter(request, response);

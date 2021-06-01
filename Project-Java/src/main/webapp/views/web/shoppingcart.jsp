@@ -65,10 +65,10 @@
                   <thead>
                     <tr class="first last">
                       <th rowspan="1">&nbsp;</th>
-                      <th rowspan="1"><span class="nobr">Product Name</span></th>
-                      <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
-                      <th class="a-center " rowspan="1">Qty</th>
-                      <th colspan="1" class="a-center">Subtotal</th>
+                      <th rowspan="1"><span class="nobr">Tên sản phẩm</span></th>
+                      <th colspan="1" class="a-center"><span class="nobr">Giá tiền</span></th>
+                      <th class="a-center " rowspan="1">Số lượng</th>
+                      <th colspan="1" class="a-center">Tổng cộng</th>
                       <th class="a-center" rowspan="1">&nbsp;</th>
                     </tr>
                   </thead>
@@ -105,15 +105,6 @@
             <div class="col-sm-4"> 
             </div>
             <div class="col-sm-4">
-              <div class="discount">
-                <h3>Discount Codes</h3>
-                <form method="post" action="#" id="discount-coupon-form">
-                  <label for="coupon_code">Enter your coupon code if you have one.</label>
-                  <input type="hidden" value="0" id="remove-coupone" name="remove">
-                  <input type="text" name="coupon_code" id="coupon_code" class="input-text fullwidth">
-                  <button value="Apply Coupon" class="button coupon " title="Apply Coupon" type="button"><span>Apply Coupon</span></button>
-                </form>
-              </div>
             </div>
             <div class="col-sm-4">
               <div class="totals">
@@ -127,19 +118,19 @@
                     <tfoot>
                       <tr>
                         <td colspan="1" class="a-left"><strong>Thành tiền</strong></td>
-                        <td class="a-right"><strong><span class="price">${total } VND</span></strong></td>
+                        <td class="a-right"><strong><span class="price"><fmt:formatNumber value="${total}" type="number" maxFractionDigits="3"/> VND</span></strong></td>
                       </tr>
                     </tfoot>
                     <tbody>
                       <tr>
                         <td colspan="1" class="a-left"> Tạm tính </td>
-                        <td class="a-right"><span class="price">${total } VND</span></td>
+                        <td class="a-right"><span class="price"><fmt:formatNumber value="${total}" type="number" maxFractionDigits="3"/> VND</span></td>
                       </tr>
                     </tbody>
                   </table>
                   <ul class="checkout">
                     <li>
-                     <a href="CheckoutController"> <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Tiến hành thanh toán</span></button></a>
+                     <a href="thanhtoan"> <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Tiến hành thanh toán</span></button></a>
                     </li>
                   </ul>
                 </div>
@@ -150,7 +141,7 @@
           <!--cart-collaterals--> 
         </div>
            </c:if>
-           <c:if test="${sessionScope.cart.size()<=0 }">
+           <c:if test="${sessionScope.cart.size() == 0 || sessionScope.cart == null }">
            	<div class="text-center">
            		<img alt="" src="https://gioquanhanh.com/extension/product/img/cart-empty.png">
            		<h5 style="margin-bottom: 20px">Không có sản phẩm nào trong giỏ hàng của bạn</h5>

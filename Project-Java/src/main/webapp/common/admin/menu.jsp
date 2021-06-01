@@ -26,8 +26,8 @@
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="pages-invoice.html"> <i class="align-middle"
-					data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
+				href="${pageContext.request.contextPath}/admin/list-order?action=list"> <i class="align-middle"
+					data-feather="credit-card"></i> <span class="align-middle">Danh sách đơn hàng</span>
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"

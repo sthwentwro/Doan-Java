@@ -78,6 +78,28 @@ public class BillDetailDAO {
 			}
 			return 0;
 		}
+	  public List<BillDetail> getBillDetail(String ma) {
+		  List<BillDetail> b = new ArrayList<>();
+		  
+		  String query = "select * from CTDH\r\n"
+		  		       + "where MaDonHang =?";
+		  try {
+			    conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);	
+				ps.setString(1, ma);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					b.add(new BillDetail(rs.getInt("MaDonHang"),
+							rs.getInt("MaPhuKien"),
+							rs.getInt("Dongia"),
+							rs.getInt("Soluong")));
+				}
+				conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		  return b;
+	  }
 	  public static void main(String[] args) {
 			BillDetailDAO bd = new BillDetailDAO();
 			

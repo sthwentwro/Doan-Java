@@ -69,32 +69,7 @@
   <section class="main-container col2-left-layout bounceInUp animated">
     <div class="container">
       <div class="row">
-        <div class="col-main col-sm-9 col-sm-push-3">
-          <!-- <div class="category-description std">
-            <div class="slider-items-products">
-              <div id="category-desc-slider" class="product-flexslider hidden-buttons">
-                <div class="slider-items slider-width-col1 owl-carousel owl-theme"> 
-                  
-                  Item
-                  <div class="item"> <a href="#"><img alt="" src="template/web/images/category-img1.jpg"></a>
-                    <div class="cat-img-title cat-bg cat-box">
-                      <div class="small-tag"><span>Hot Sale</span> 49% OFF</div>
-                      <h2 class="cat-heading"></h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                    </div>
-                  </div>
-                  End Item 
-                  
-                  Item
-                  <div class="item"> <a href="#"><img alt="" src="template/web/images/category-img2.jpg"></a> 
-                    
-                    End Item 
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+        <div class="col-main col-sm-9 col-sm-push-3">       
           <article class="col-main">
             <div class="page-title">
               <h1>${tenloai}</h1>
@@ -146,7 +121,7 @@
 		                <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
 		                  <div class="item-inner">
 		                    <div class="item-img">
-		                      <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}" class="product-image"><img src="${i.cover}" alt="Retis lapen casen"></a>
+		                      <div class="item-img-info"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}" class="product-image"><img src="${i.cover}" alt="image"></a>
 		                        <div class="new-label new-top-left">New</div>
 		                        <div class="actions">
 		                          <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
@@ -169,7 +144,7 @@
 		                        <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
 		                        <div class="item-content">
 		                          <div class="item-price">
-		                            <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+		                            <div class="price-box"><span class="regular-price"><span class="price"><fmt:formatNumber value="${i.giaban}" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
 		                             </div>
 		                          </div>
 		                        </div>

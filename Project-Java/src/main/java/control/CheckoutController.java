@@ -19,7 +19,7 @@ import entity.Thuonghieu;
 /**
  * Servlet implementation class CheckoutController
  */
-@WebServlet("/CheckoutController")
+@WebServlet("/thanhtoan")
 public class CheckoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

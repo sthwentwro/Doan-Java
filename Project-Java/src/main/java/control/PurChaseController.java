@@ -62,6 +62,7 @@ public class PurChaseController extends HttpServlet {
 		HttpSession s = request.getSession();			
 		List<Item> attribute = (List<Item>) s.getAttribute("cart");
 		User loginedUser = (User) s.getAttribute("loginedUser");
+		String diachi = request.getParameter("diachi");
 		int total = 0;
 		for(int i =0 ;i<attribute.size();i++)
 		{
@@ -74,7 +75,7 @@ public class PurChaseController extends HttpServlet {
 			b.setTinhtrangdonhang(b.getTinhtrangdonhang());
 			b.setIDUser(loginedUser.getID());
 			b.setTotal(total);
-			
+			b.setDiachigiao(diachi);
 			/*
 			 * int YYYY = Calendar.YEAR; int MM = Calendar.MONTH; int dd = Calendar.DATE;
 			 * Date date = new Date(YYYY,MM,dd);

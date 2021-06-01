@@ -383,7 +383,7 @@
 	                  <div class="item-title"> <a title="${i.tenphukien}" href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}">${i.tenphukien}</a> </div>
 	                  <div class="item-content">
 	                    <div class="item-price">
-	                      <div class="price-box"> <span class="regular-price"> <span class="price">${i.giaban}</span> </span><small>VND</small>
+	                      <div class="price-box"> <span class="regular-price"> <span class="price"><fmt:formatNumber value="${i.giaban}" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
 	                       </div>
 	                    </div>
 	                  </div>
@@ -464,7 +464,7 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                      <div class="price-box"><span class="regular-price"><span class="price"><fmt:formatNumber value="${i.giaban}" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
                                        </div>
                                     </div>
                                   </div>
@@ -504,7 +504,7 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                      <div class="price-box"><span class="regular-price"><span class="price"><fmt:formatNumber value="${i.giaban}" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
                                        </div>
                                     </div>
                                   </div>
@@ -543,7 +543,7 @@
                                   <div class="item-title"><a href="${pageContext.request.contextPath}/DetaiProduct?pid=${i.IDPhukien}" title="${i.tenphukien}">${i.tenphukien}</a> </div>
                                   <div class="item-content">
                                     <div class="item-price">
-                                      <div class="price-box"><span class="regular-price"><span class="price">${i.giaban}</span> </span><small>VND</small>
+                                      <div class="price-box"><span class="regular-price"><span class="price"><fmt:formatNumber value="${i.giaban}" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
                                        </div>
                                     </div>
                                   </div>

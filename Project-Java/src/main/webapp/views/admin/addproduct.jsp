@@ -31,7 +31,7 @@
 					<label class="form-label">Giá bán</label> <input type="text"
 						class="form-control" value="" name="giaban">
 				</div>
-				</div>S
+				</div>
 				<div class="form-group"  style="margin-bottom: 50px;">
 						<label for="inputState" class="col-form-label col-sm-2 form-label w-100">Thương hiệu</label> 
 						<div class="col-sm-2">

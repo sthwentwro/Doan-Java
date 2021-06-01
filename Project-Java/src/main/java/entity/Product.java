@@ -2,7 +2,7 @@ package entity;
 
 import java.util.Date;
 
-public class Product {
+public class Product{
 	private int IDPhukien;
 	private int IDloaiPK;
 	private String tenphukien;

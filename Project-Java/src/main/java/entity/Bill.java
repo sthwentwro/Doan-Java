@@ -1,20 +1,20 @@
 package entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class Bill {
 
-	int MaDonHang;
-	boolean Dathanhtoan;
-	boolean Tinhtrangdonhang;
-	Timestamp Ngaydat;
-	Timestamp Ngaygiao;
-	int Total;
-	int IDUser;
+	private int MaDonHang;
+	private boolean Dathanhtoan;
+	private boolean Tinhtrangdonhang;
+	private Timestamp Ngaydat;
+	private Timestamp Ngaygiao;
+	private int Total;
+	private int IDUser;
+	private String diachigiao;
 	
 	public Bill(int maDonHang, boolean dathanhtoan, boolean tinhtrangdonhang, Timestamp ngaydat,Timestamp ngaygiao, int total,
-			int iDUser) {
+			int iDUser, String diachi) {
 		
 		this.MaDonHang = maDonHang;
 		this.Dathanhtoan = dathanhtoan;
@@ -23,6 +23,7 @@ public class Bill {
 		this.Ngaygiao = ngaygiao;
 		this.Total = total;
 		this.IDUser = iDUser;
+		this.setDiachigiao(diachi);
 	}
 	public Bill() {
 		
@@ -68,6 +69,12 @@ public class Bill {
 	}
 	public void setIDUser(int iDUser) {
 		IDUser = iDUser;
+	}
+	public String getDiachigiao() {
+		return diachigiao;
+	}
+	public void setDiachigiao(String diachigiao) {
+		this.diachigiao = diachigiao;
 	}
 	
 

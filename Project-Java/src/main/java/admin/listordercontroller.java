@@ -13,6 +13,7 @@ import dao.BillDAO;
 import dao.BillDetailDAO;
 import entity.Bill;
 import entity.BillDetail;
+import entity.Revenue;
 
 /**
  * Servlet implementation class listordercontroller
@@ -70,6 +71,9 @@ public class listordercontroller extends HttpServlet {
 		  { 
 			  endPage++;
 		  }
+		  
+		List<Revenue> listDoanhthu = daoB.getDoanhthu();
+		request.setAttribute("listdoanhthu", listDoanhthu);
 		request.setAttribute("tag", index); request.setAttribute("endP", endPage);
 		request.setAttribute("listO", daoB.pagingOrder(index));		 
 		request.getServletContext().getRequestDispatcher("/views/admin/listorder.jsp").forward(request, response);

@@ -13,6 +13,7 @@ import java.util.List;
 
 import context.DBContext;
 import entity.Bill;
+import entity.Revenue;
 
 public class BillDAO {
 	Connection conn = null;
@@ -202,6 +203,25 @@ public class BillDAO {
 			e.printStackTrace();
 		}
 		return;
+	}
+	public  List<Revenue> getDoanhthu()
+	{
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+		Date date = new Date();
+		List<Revenue> list = new ArrayList<>(); 
+		  String query = "select MONTH(Ngaydat) AS Thang ,Sum(Total) AS Doanhthu  from Dondathang where YEAR(Ngaydat)= ? group by MONTH(Ngaydat)";  
+		  try {  
+			  conn = new DBContext().getConnection();//mo ket noi den sql
+				ps = conn.prepareStatement(query);
+				ps.setString(1, formatter.format(date) );
+				rs = ps.executeQuery();
+		  while(rs.next()) {            
+			  Revenue doanhthu = new Revenue();
+		  doanhthu.setThang(rs.getInt("Thang")); 
+		  doanhthu.setTotal(rs.getLong("Doanhthu"));
+		  list.add(doanhthu);
+		  }     } catch (Exception e) {         } 
+		  return list;
 	}
 	public static void main(String[] args) {
 		BillDAO dao = new BillDAO();

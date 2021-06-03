@@ -21,6 +21,7 @@
 						<th style="width: 15%">Tình trạng giao hàng</th>
 						<th style="width: 15%">ID người mua</th> 
 						<th>Actions</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -58,6 +59,7 @@
 				</c:forEach>									
 				</tbody>
 			</table>
+			<a href="#" data-toggle="modal" data-target="#exampleModalCenter">Doanh Thu</a>
 		</div>
 		<ul class="pagination pagination-md">
 			<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
@@ -66,5 +68,48 @@
 			</c:forEach>	
 			<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
 		</ul>
+		<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Doanh Thu Theo Tháng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Tháng</th>
+      <th scope="col">Doanh Thu</th>
+      
+     
+    </tr>
+  </thead>
+  <tbody>
+  	<c:forEach items="${listdoanhthu }" var ="item">
+  	   <tr>
+      <th scope="row">${item.thang}</th>
+      <td>${item.total}</td>
+      
+     
+    </tr>
+  	</c:forEach>
+ 
+
+
+  </tbody>
+</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

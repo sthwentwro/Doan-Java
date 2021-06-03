@@ -31,7 +31,7 @@
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="pages-blank.html"> <i class="align-middle"
+				href="${pageContext.request.contextPath}/admin/"> <i class="align-middle"
 					data-feather="book"></i> <span class="align-middle">Blank</span>
 			</a></li>
 

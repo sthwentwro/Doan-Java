@@ -10,8 +10,11 @@
 <body>
 	<div class="card">
 			<div class="card-header">
-				<h4 class="card-title">Danh sách đơn hàng</h4>				
-			</div>
+				<h4 class="card-title">Danh sách đơn hàng</h4>	
+				<div class="col-md-12 text-md-right">
+			    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><button class="btn btn-info"><i class="fas fa-info"></i> Xem Doanh Thu</button></a>
+			</div>			
+			</div>			
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -58,8 +61,7 @@
 					</tr>	
 				</c:forEach>									
 				</tbody>
-			</table>
-			<a href="#" data-toggle="modal" data-target="#exampleModalCenter">Doanh Thu</a>
+			</table>			
 		</div>
 		<ul class="pagination pagination-md">
 			<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
@@ -93,7 +95,7 @@
   	<c:forEach items="${listdoanhthu }" var ="item">
   	   <tr>
       <th scope="row">${item.thang}</th>
-      <td>${item.total}</td>
+      <td><fmt:formatNumber value="${item.total}" type="number" maxFractionDigits="3"/> VND</td>
       
      
     </tr>
@@ -106,7 +108,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

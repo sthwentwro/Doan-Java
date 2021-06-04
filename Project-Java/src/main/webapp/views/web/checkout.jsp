@@ -91,10 +91,10 @@
                       <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
                       <td><h2 class="product-name"> <a href="#">${item.product.tenphukien }</a> </h2></td>
                       <td class="a-center hidden-table"><a title="Edit item parameters"></a></td>
-                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
+                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price"><fmt:formatNumber value="${item.product.giaban }" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
                       </td>
                       <td class="a-center movewishlist"><span>${item.quantity }</span></td>
-                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
+                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price"><fmt:formatNumber value="${item.product.giaban*item.quantity }" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
                       </td>
                 
                     </tr>
@@ -112,14 +112,10 @@
                     <tfoot>
                       <tr>
                         <td colspan="1" class="a-left"><strong>Thành tiền</strong></td>
-                        <td class="a-right"><strong><span class="price">${total } VND</span></strong></td>
+                        <td class="a-right"><strong><span class="price"><fmt:formatNumber value="${total }" type="number" maxFractionDigits="3"/> VND</span></strong></td>
                       </tr>
                     </tfoot>
-                    <tbody>
-                      <tr>
-                        <td colspan="1" class="a-left"> Tạm tính </td>
-                        <td class="a-right"><span class="price">${total } VND</span></td>
-                      </tr>
+                    <tbody>                     
                     </tbody>
                   </table>
               </fieldset>

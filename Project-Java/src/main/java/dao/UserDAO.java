@@ -8,6 +8,7 @@ import java.util.List;
 
 import context.DBContext;
 import entity.User;
+import utils.MD5;
 
 public class UserDAO {
 	//ket noi sql
@@ -19,6 +20,8 @@ public class UserDAO {
 		
 	public User getUser(String username,String pass){
 		User user = null;
+		//ma hoa mat khau
+		String passNew = MD5.encode(pass);
 		String query = "select * from KhachHang where Username=? and Password=?";
 		try {
 			conn = new DBContext().getConnection();//mo ket noi den sql
@@ -26,7 +29,7 @@ public class UserDAO {
 			//gan gia tri username vao dau ? thu 1 
 			ps.setString(1, username);
 			//gan gia tri pass vao dau ? thu 2 
-			ps.setString(2, pass);
+			ps.setString(2, passNew);
 			//chay cau lenh query
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -47,6 +50,7 @@ public class UserDAO {
 	}
 	//hàm đăng ký
 	public boolean signup(String username, String password, String email, String sdt, String diachi, String fullname) {		
+		String passNew = MD5.encode(password);
 		String query = "insert into KhachHang\n"
 				+"values(?,?,?,?,?,?,?)";
 		try {
@@ -55,7 +59,7 @@ public class UserDAO {
 			//gan gia tri username vao dau ? thu 1 
 			ps.setNString(1, username);
 			//gan gia tri pass vao dau ? thu 2 
-			ps.setNString(2, password);
+			ps.setString(2, passNew);
 			ps.setNString(3, email);
 			ps.setString(4, sdt);
 			ps.setNString(5, diachi);
@@ -124,7 +128,8 @@ public class UserDAO {
 		return listUser;
 	}
 	//hàm đăng ký
-		public boolean adduser(String username, String password, String email, String sdt, String diachi, String fullname) {		
+		public boolean adduser(String username, String password, String email, String sdt, String diachi, String fullname) {
+			String passNew = MD5.encode(password);
 			String query = "insert into KhachHang\n"
 					+"values(?,?,?,?,?,?,?)";
 			try {
@@ -133,7 +138,7 @@ public class UserDAO {
 				//gan gia tri username vao dau ? thu 1 
 				ps.setNString(1, username);
 				//gan gia tri pass vao dau ? thu 2 
-				ps.setNString(2, password);
+				ps.setString(2, passNew);
 				ps.setNString(3, email);
 				ps.setString(4, sdt);
 				ps.setNString(5, diachi);
@@ -175,6 +180,7 @@ public class UserDAO {
 			return user;
 		}
 		public boolean updateUser(int id,String username, String password, String email, String sdt, String diachi, String fullname, int roleid) {
+			String passNew = MD5.encode(password);
 			String query = "UPDATE KhachHang\r\n"
 					+ "SET [Username] = ?,\r\n"
 					+ "	Password = ?,\r\n"
@@ -188,7 +194,7 @@ public class UserDAO {
 				conn = new DBContext().getConnection();//mo ket noi den sql
 				ps = conn.prepareStatement(query);
 				ps.setNString(1, username);
-				ps.setNString(2, password);
+				ps.setString(2, passNew);
 				ps.setNString(3, email);
 				ps.setString(4, sdt);
 				ps.setNString(5, diachi);

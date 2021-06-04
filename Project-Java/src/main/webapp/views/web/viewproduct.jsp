@@ -138,7 +138,7 @@
             <div class="product-collateral col-lg-12 col-sm-12 col-xs-12 bounceInUp animated">
               <div class="add_info">
                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-                  <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Product Description </a>
+                  <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Mô tả sản phẩm </a>
                  
                   </li>
                   

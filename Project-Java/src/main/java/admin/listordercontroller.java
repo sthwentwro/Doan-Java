@@ -65,7 +65,7 @@ public class listordercontroller extends HttpServlet {
 		  { 
 			  index = Integer.parseInt(page); 
 		  } 
-		  int count = daoB.getTotalBill();//lay tong so user 
+		  int count = daoB.getTotalBill();//lay tong so don hang
 		  int endPage = count/8;
 		  if(count % 8 !=0) 
 		  { 

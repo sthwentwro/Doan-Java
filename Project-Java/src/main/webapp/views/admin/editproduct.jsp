@@ -38,7 +38,7 @@
 						class="form-control" value="${detail.giaban}" name="giaban">
 				</div>
 				</div>
-				<div class="form-group"  style="margin-bottom: 50px;">
+				<div class="form-group">
 						<label for="inputState" class="col-form-label col-sm-2 form-label w-100">Thương hiệu</label> 
 						<div class="col-sm-2">
 						<select id="inputState"	class="form-control" name="thuonghieu">
@@ -55,7 +55,7 @@
 						</select>
 						</div>
 					</div>
-					<div class="form-group"  style="margin-bottom: 50px;">
+					<div class="form-group">
 						<label for="inputState" class="col-form-label col-sm-2 form-label w-100">Loại sản phẩm</label> 
 						<div class="col-sm-2">
 						<select id="inputState"	class="form-control" name="loai">

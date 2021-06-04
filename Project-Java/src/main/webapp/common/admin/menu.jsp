@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <nav id="sidebar" class="sidebar">
 	<div class="sidebar-content js-simplebar">
-		<a class="sidebar-brand" href="index.html"> <span
+		<a class="sidebar-brand" href="${pageContext.request.contextPath}/admin/"> <span
 			class="align-middle">Trang Admin</span>
 		</a>
 
@@ -31,12 +31,12 @@
 			</a></li>
 
 			<li class="sidebar-item"><a class="sidebar-link"
-				href="${pageContext.request.contextPath}/admin/"> <i class="align-middle"
+				href="#"> <i class="align-middle"
 					data-feather="book"></i> <span class="align-middle">Blank</span>
 			</a></li>
 
 			<li class="sidebar-header">Tools & Components</li>
-			<li class="sidebar-item"><a href="#ui" data-toggle="collapse"
+			<li class="sidebar-item"><a href="#" data-toggle="collapse"
 				class="sidebar-link collapsed"> <i class="align-middle"
 					data-feather="briefcase"></i> <span class="align-middle">UI
 						Elements</span>
@@ -44,54 +44,20 @@
 				<ul id="ui" class="sidebar-dropdown list-unstyled collapse "
 					data-parent="#sidebar">
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-alerts.html">Alerts</a></li>
+						href="#">Alerts</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-buttons.html">Buttons</a></li>
+						href="#">Buttons</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-cards.html">Cards</a></li>
+						href="#">Cards</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-general.html">General</a></li>
+						href="#">General</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-grid.html">Grid</a></li>
+						href="#">Grid</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-modals.html">Modals</a></li>
+						href="#">Modals</a></li>
 					<li class="sidebar-item"><a class="sidebar-link"
-						href="ui-typography.html">Typography</a></li>
-				</ul></li>
-
-			<li class="sidebar-item"><a class="sidebar-link"
-				href="icons-feather.html"> <i class="align-middle"
-					data-feather="coffee"></i> <span class="align-middle">Icons</span>
-			</a></li>
-
-			<li class="sidebar-item"><a href="#forms" data-toggle="collapse"
-				class="sidebar-link collapsed"> <i class="align-middle"
-					data-feather="check-circle"></i> <span class="align-middle">Forms</span>
-			</a>
-				<ul id="forms" class="sidebar-dropdown list-unstyled collapse "
-					data-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link"
-						href="forms-layouts.html">Form Layouts</a></li>
-					<li class="sidebar-item"><a class="sidebar-link"
-						href="forms-basic-inputs.html">Basic Inputs</a></li>
-				</ul></li>
-
-			<li class="sidebar-item"><a class="sidebar-link"
-				href="tables-bootstrap.html"> <i class="align-middle"
-					data-feather="list"></i> <span class="align-middle">Tables</span>
-			</a></li>
-
-			<li class="sidebar-header">Plugins & Addons</li>
-
-			<li class="sidebar-item"><a class="sidebar-link"
-				href="charts-chartjs.html"> <i class="align-middle"
-					data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-			</a></li>
-
-			<li class="sidebar-item"><a class="sidebar-link"
-				href="maps-google.html"> <i class="align-middle"
-					data-feather="map"></i> <span class="align-middle">Maps</span>
-			</a></li>
+						href="#">Typography</a></li>
+				</ul></li>						
 		</ul>
 	</div>
 </nav>

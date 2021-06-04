@@ -209,7 +209,7 @@ public class BillDAO {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
 		Date date = new Date();
 		List<Revenue> list = new ArrayList<>(); 
-		  String query = "select MONTH(Ngaydat) AS Thang ,Sum(Total) AS Doanhthu  from Dondathang where YEAR(Ngaydat)= ? group by MONTH(Ngaydat)";  
+		  String query = "select MONTH(Ngaydat) AS Thang ,Sum(Total) AS Doanhthu  from Dondathang where YEAR(Ngaydat)= ? and Dathanhtoan = 1 group by MONTH(Ngaydat)";  
 		  try {  
 			  conn = new DBContext().getConnection();//mo ket noi den sql
 				ps = conn.prepareStatement(query);

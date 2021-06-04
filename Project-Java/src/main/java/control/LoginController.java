@@ -58,6 +58,13 @@ public class LoginController extends HttpServlet {
 		User user = dao.getUser(userName, pass);
 		//neu user la null thi thong bao loi
 		if(user == null) {
+			ProductDAO daoP = new ProductDAO();
+			//lay danh sach cac loai san pham
+			List<Category> listc = daoP.getListCategory();
+			request.setAttribute("listc", listc);
+			ThuonghieuDAO th = new ThuonghieuDAO();	
+			List<Thuonghieu> thuonghieu = th.getAll();
+			request.setAttribute("thuonghieu", thuonghieu);
 			String errorMessage = "Tên đăng nhập hoặc mật khẩu không đúng";
 			 
             request.setAttribute("errorMessage", errorMessage);

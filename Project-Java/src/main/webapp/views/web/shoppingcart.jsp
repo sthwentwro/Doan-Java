@@ -75,8 +75,8 @@
                   <tfoot>
                     <tr class="first last">
                       <td class="a-right last" colspan="50">
-                        <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Continue Shopping</span></button></a>
-                        <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Update Cart</span></button>
+                        <a href ="${pageContext.request.contextPath }/Home"><button onclick="#" class="button btn-continue" title="Continue Shopping" type="button" ><span>Tiếp tục mua hàng</span></button></a>
+                        <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span>Cập nhật giỏ hàng</span></button>
                     </tr>
                   </tfoot>
                   <tbody>    
@@ -87,10 +87,10 @@
 	                    <tr class="first odd">
 	                      <td class="image"><a class="product-image" title="" href="#"><img width="75" height="75" alt="Women's Crepe Printed Black" src="${item.product.cover}"></a></td>
 	                      <td><h2 class="product-name"> <a href="${pageContext.request.contextPath}/DetaiProduct?pid=${item.product.IDPhukien}">${item.product.tenphukien }</a> </h2></td>
-	                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price">${item.product.giaban }</span> </span><small>VND</small>
+	                      <td class="a-center hidden-table"><span class="cart-price"> <span class="price"><fmt:formatNumber value="${item.product.giaban }" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
 	                      </td>
 	                      <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${item.quantity}" name="quantity"></td>
-	                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price">${item.product.giaban*item.quantity }</span> </span><small>VND</small>
+	                      <td class="a-center movewishlist"><span class="cart-price"> <span class="price"><fmt:formatNumber value="${item.product.giaban*item.quantity }" type="number" maxFractionDigits="3"/></span> </span><small>VND</small>
 	                      </td>
 	                      <td class="a-center last"><a class="button remove-item" title="Remove item" href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.IDPhukien }"><span><span>Remove item</span></span></a></td>
 	                    </tr>

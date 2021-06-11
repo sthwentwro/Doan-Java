@@ -96,7 +96,7 @@
                   <li>
                     <label for="email">Số điện thoại</label>
                     <br>
-                    <input type="text" pattern="[0][0-9]{10}" class="input-text" value="" name="sdt" required>
+                    <input type="text" pattern="[0][0-9]{9}" class="input-text" value="" name="sdt" required>
                   </li>                
               </ul>
               <div class="buttons-set">

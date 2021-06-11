@@ -45,9 +45,17 @@
             </c:forEach>
            </ul>                       
     </div>
-  </nav>
-  
-   <h3 style="color: black">Cảm ơn quý khách đã mua hàng </h3> 
+  </nav> 
+   <div class="jumbotron text-center">
+  <h1 class="display-3">Cảm ơn quý khách đã mua hàng!</h1>
+  <hr>
+  <p>
+    Có vấn đề ? <a href="#">Liên hệ chúng tôi</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="Home" role="button">Về trang chủ</a>
+  </p>
+</div>
  
 </body>
 </html>

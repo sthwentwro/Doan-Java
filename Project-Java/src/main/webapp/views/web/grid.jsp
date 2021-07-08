@@ -79,13 +79,21 @@
                 <div class="view-mode"> <span title="Grid" class="button button-active button-grid">&nbsp;</span><a href="danhsachsanpham?idth=1" title="List" class="button-list">&nbsp;</a> </div>
               </div>
               <div id="sort-by">
-                <label class="left">Sort By: </label>
+                <label class="left">Sắp xếp theo </label>
                 <ul>
-                  <li><a href="#">Position<span class="right-arrow"></span></a>
+                  <li><a href="#">Vị Trí<span class="right-arrow"></span></a>
                     <ul>
-                      <li><a href="#">Name</a></li>
-                      <li><a href="#">Price</a></li>
-                      <li><a href="#">Position</a></li>
+                    	<c:choose>
+                          <c:when test="${not empty param.idcategory  }">
+                    	     <li><a href="danhsachsanpham?idcategory=${param.idcategory}&sort-by=name&page=${param.page}">Tên</a></li>
+                             <li><a href="danhsachsanpham?idcategory=${param.idcategory}&sort-by=price&page=${param.page}">Giá</a></li>
+                          </c:when>
+                         <c:otherwise>
+                    	     <li><a href="danhsachsanpham?idth=${param.idth}&sort-by=name&page=${param.page}">Tên</a></li>
+                             <li><a href="danhsachsanpham?idth=${param.idth}&sort-by=price&page=${param.page}">Giá</a></li>                            
+                         </c:otherwise>
+                        </c:choose>
+                      
                     </ul>
                   </li>
                 </ul>
